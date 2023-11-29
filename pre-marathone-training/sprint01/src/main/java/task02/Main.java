@@ -7,15 +7,18 @@ public class Main {
 
         Employee[] employees = {em1, em2};
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder("[");
 
         for (Employee employee : employees) {
-            sb.append("Name: ")
+            sb.append("{fullName: ")
                     .append(employee.getFullName())
-                    .append("; Salary: ")
+                    .append(", salary: ")
                     .append(employee.getSalary())
-                    .append("\n");
+                    .append("}");
         }
+
+        sb.append("]");
+
         String employeesInfo = sb.toString();
 
         System.out.println(employeesInfo);
