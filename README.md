@@ -7,6 +7,7 @@
   * [Task 1](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint01\src\main\java\task01\README.md)
   * [Task 2](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint01\src\main\java\task02\README.md)
   * [Task 3](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint01\src\main\java\task03\README.md)
+  * [Task 4](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint01\src\main\java\task04\README.md)
 </details>
 
 * Sprint 1. Class Design. Encapsulation.
