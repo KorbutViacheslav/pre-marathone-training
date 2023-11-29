@@ -1,9 +1,9 @@
 package task01;
 
-public class Person {
-    int age;
-    String healthInfo;
-    String name;
+public abstract class Person {
+    protected int age;
+    protected String healthInfo;
+    protected String name;
 
     public Person(int age, String healthInfo, String name) {
         this.age = age;
@@ -11,8 +11,8 @@ public class Person {
         this.name = name;
     }
 
-    String getHealthStatus() {
-        return name + " " + healthInfo;
+    public String getHealthStatus() {
+        return name + " healthInfo:" + healthInfo;
     }
 
 }
