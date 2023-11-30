@@ -1,12 +1,27 @@
 package task04;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class MyUtils {
-    public static List<Employee> largestEmployees(List<Employee> workers) {
-        return null;
+    public static List<Employee> largestEmployees(List<Employee> employees) {
+        Map<String, Employee> uniqueEmployees = new HashMap<>();
+
+        for (Employee employee : employees) {
+            String key = employee.getName();
+            if (uniqueEmployees.containsKey(key)) {
+                Employee existingEmployee = uniqueEmployees.get(key);
+                if (employee.getExperience() > existingEmployee.getExperience() ||
+                        (employee.getExperience() == existingEmployee.getExperience() &&
+                                employee.getBasePayment().compareTo(existingEmployee.getBasePayment()) > 0)) {
+                    uniqueEmployees.put(key, employee);
+                }
+            } else {
+                uniqueEmployees.put(key, employee);
+            }
+        }
+
+        return new ArrayList<>(uniqueEmployees.values());
     }
 
     public static void main(String[] args) {
