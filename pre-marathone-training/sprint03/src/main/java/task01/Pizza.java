@@ -15,7 +15,9 @@ public class Pizza {
     }
 
     public static class PizzaBuilder {
+        void addCheese() {
 
+        }
     }
 }
 
