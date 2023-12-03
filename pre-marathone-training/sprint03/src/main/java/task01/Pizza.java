@@ -55,8 +55,10 @@ public class Pizza {
     }
 
     public static class PizzaBuilder {
-        void addCheese() {
+        void addCheese(String cheese) {
+        }
 
+        void addMeat(String meat) {
         }
     }
 }
