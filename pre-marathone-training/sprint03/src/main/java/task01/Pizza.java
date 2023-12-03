@@ -55,10 +55,33 @@ public class Pizza {
     }
 
     public static class PizzaBuilder {
-        void addCheese(String cheese) {
+        private String cheese;
+        private String meat;
+        private String seafood;
+        private String vegetable;
+        private String mushroom;
+
+        public PizzaBuilder addCheese(String cheese) {
+            this.cheese = cheese;
+            return this;
         }
 
-        void addMeat(String meat) {
+        public PizzaBuilder addMeat(String meat) {
+            this.meat = meat;
+            return this;
+        }
+
+        void addSeaFood(String seaFood) {
+        }
+
+        void addVegetable(String vegetable) {
+        }
+
+        void addMushroom(String mushroom) {
+        }
+
+        public Pizza build() {
+            return new Pizza();
         }
     }
 }
