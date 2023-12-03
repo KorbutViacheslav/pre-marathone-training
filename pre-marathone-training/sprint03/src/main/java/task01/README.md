@@ -19,6 +19,6 @@ public class Pizza {
 ```
 
 Create public static inner class named PizzaBuilder inside Pizza class that correspond the next class diagram:
-![screenshot](https://github.com/bbogdasha/java-online-marathon/blob/master/sprint03/task01/screenshot/screen.png)
+![screenshot](https://github.com/KorbutViacheslav/pre-marathone-training/blob/main/pre-marathone-training/sprint03/screenshots-tasks-s3/screenS3T2.png?raw=true)
 
 Inside the cook method create and return an instance of Pizza class with your at least three favorite ingredients.
