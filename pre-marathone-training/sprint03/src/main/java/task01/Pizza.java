@@ -56,6 +56,24 @@ public class Pizza {
             return pizza;
         }
     }
+    public static Pizza cook() {
+        return Pizza.base()
+                .addCheese("Mozzarella")
+                .addMeat("Pepperoni")
+                .addVegetable("Mushrooms")
+                .build();
+    }
+
+    @Override
+    public String toString() {
+        return "Pizza{" +
+                "cheese='" + cheese + '\'' +
+                ", meat='" + meat + '\'' +
+                ", seafood='" + seafood + '\'' +
+                ", vegetable='" + vegetable + '\'' +
+                ", mushroom='" + mushroom + '\'' +
+                '}';
+    }
 }
 
 
