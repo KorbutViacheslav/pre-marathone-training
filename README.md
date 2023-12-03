@@ -1,4 +1,4 @@
-# pre-marathone-training
+# Pre-marathon training
 
 ### Sprint themes:
 <details>
