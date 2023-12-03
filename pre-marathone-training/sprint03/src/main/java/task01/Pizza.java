@@ -10,46 +10,6 @@ public class Pizza {
     private Pizza() {
     }
 
-    public String getCheese() {
-        return cheese;
-    }
-
-    public void setCheese(String cheese) {
-        this.cheese = cheese;
-    }
-
-    public String getMeat() {
-        return meat;
-    }
-
-    public void setMeat(String meat) {
-        this.meat = meat;
-    }
-
-    public String getSeafood() {
-        return seafood;
-    }
-
-    public void setSeafood(String seafood) {
-        this.seafood = seafood;
-    }
-
-    public String getVegetable() {
-        return vegetable;
-    }
-
-    public void setVegetable(String vegetable) {
-        this.vegetable = vegetable;
-    }
-
-    public String getMushroom() {
-        return mushroom;
-    }
-
-    public void setMushroom(String mushroom) {
-        this.mushroom = mushroom;
-    }
-
     public static PizzaBuilder base() {
         return new PizzaBuilder();
     }
@@ -71,17 +31,29 @@ public class Pizza {
             return this;
         }
 
-        void addSeaFood(String seaFood) {
+        public PizzaBuilder addSeaFood(String seaFood) {
+            this.seafood = seaFood;
+            return this;
         }
 
-        void addVegetable(String vegetable) {
+        public PizzaBuilder addVegetable(String vegetable) {
+            this.vegetable = vegetable;
+            return this;
         }
 
-        void addMushroom(String mushroom) {
+        public PizzaBuilder addMushroom(String mushroom) {
+            this.mushroom = mushroom;
+            return this;
         }
 
         public Pizza build() {
-            return new Pizza();
+            Pizza pizza = new Pizza();
+            pizza.cheese = this.cheese;
+            pizza.meat = this.meat;
+            pizza.seafood = this.seafood;
+            pizza.vegetable = this.vegetable;
+            pizza.mushroom = this.mushroom;
+            return pizza;
         }
     }
 }
