@@ -2,26 +2,38 @@ package task04;
 
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.function.Predicate;
 
 public class MyUtils {
     public static List<Employee> largestEmployees(List<Employee> employees) {
-        Map<String, Employee> uniqueEmployees = new HashMap<>();
+        int maxExperienceEmployee = employees.stream()
+                .filter(Predicate.not(Manager.class::isInstance))
+                .mapToInt(Employee::getExperience)
+                .max()
+                .orElse(0);
+        int maxExperienceManager = employees.stream()
+                .filter(Manager.class::isInstance)
+                .mapToInt(Employee::getExperience)
+                .max()
+                .orElse(0);
+        BigDecimal maxSalaryEmployee = employees.stream()
+                .filter(Predicate.not(Manager.class::isInstance))
+                .map(Employee.class::cast)
+                .map(Employee::getBasePayment)
+                .max(BigDecimal::compareTo)
+                .orElse(BigDecimal.ZERO);
+        BigDecimal maxSalaryManager = employees.stream()
+                .filter(Manager.class::isInstance)
+                .map(Employee::getBasePayment)
+                .max(BigDecimal::compareTo)
+                .orElse(BigDecimal.ZERO);
+        return employees.stream()
+                .filter(employee -> employee.getExperience() == maxExperienceManager
+                        || employee.getExperience() == maxExperienceEmployee
+                        || employee.getBasePayment().equals(maxSalaryManager)
+                        || employee.getBasePayment().equals(maxSalaryEmployee))
+                .toList();
 
-        for (Employee employee : employees) {
-            String key = employee.getName();
-            if (uniqueEmployees.containsKey(key)) {
-                Employee existingEmployee = uniqueEmployees.get(key);
-                if (employee.getExperience() > existingEmployee.getExperience() ||
-                        (employee.getExperience() == existingEmployee.getExperience() &&
-                                employee.getBasePayment().compareTo(existingEmployee.getBasePayment()) > 0)) {
-                    uniqueEmployees.put(key, employee);
-                }
-            } else {
-                uniqueEmployees.put(key, employee);
-            }
-        }
-
-        return new ArrayList<>(uniqueEmployees.values());
     }
 
     public static void main(String[] args) {
@@ -33,7 +45,7 @@ public class MyUtils {
                 new Employee("Ihor", 5, new BigDecimal("4500.00")),
                 new Manager("Vasyl", 8, new BigDecimal("2000.00"), 2.0)
         );
-        List<Employee> result = largestEmployees(employees);
-        result.forEach(System.out::println);
+        largestEmployees(employees).forEach(System.out::println);
+
     }
 }
