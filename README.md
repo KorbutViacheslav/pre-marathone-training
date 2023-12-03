@@ -8,6 +8,18 @@
   * [Task 2](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint01\src\main\java\task02\README.md)
   * [Task 3](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint01\src\main\java\task03\README.md)
   * [Task 4](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint01\src\main\java\task04\README.md)
+  * [Task 5](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint01\src\main\java\task05\README.md)
+  * [Task 6](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint01\src\main\java\task06\README.md)
+</details>
+<details>
+<summary>Sprint 2. Inherintance. Polymorphism.</summary>
+
+* [Task 1](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint02\src\main\java\task01\README.md)
+* [Task 2](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint02\src\main\java\task02\README.md)
+* [Task 3](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint02\src\main\java\task03\README.md)
+* [Task 4](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint02\src\main\java\task04\README.md)
+* [Task 5](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint02\src\main\java\task05\README.md)
+* [Task 6](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint02\src\main\java\task06\README.md)
 </details>
 
 * Sprint 1. Class Design. Encapsulation.
