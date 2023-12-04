@@ -7,7 +7,12 @@ public class Pizza {
     private String vegetable;
     private String mushroom;
 
-    private Pizza() {
+    private Pizza(PizzaBuilder pizzaBuilder) {
+        this.cheese = pizzaBuilder.cheese;
+        this.meat = pizzaBuilder.meat;
+        this.seafood = pizzaBuilder.seafood;
+        this.vegetable = pizzaBuilder.vegetable;
+        this.mushroom = pizzaBuilder.mushroom;
     }
 
     public static PizzaBuilder base() {
@@ -47,32 +52,36 @@ public class Pizza {
         }
 
         public Pizza build() {
-            Pizza pizza = new Pizza();
-            pizza.cheese = this.cheese;
-            pizza.meat = this.meat;
-            pizza.seafood = this.seafood;
-            pizza.vegetable = this.vegetable;
-            pizza.mushroom = this.mushroom;
-            return pizza;
+            return new Pizza(this);
         }
-    }
-    public static Pizza cook() {
-        return Pizza.base()
-                .addCheese("Mozzarella")
-                .addMeat("Pepperoni")
-                .addVegetable("Mushrooms")
-                .build();
     }
 
     @Override
     public String toString() {
-        return "Pizza{" +
-                "cheese='" + cheese + '\'' +
-                ", meat='" + meat + '\'' +
-                ", seafood='" + seafood + '\'' +
-                ", vegetable='" + vegetable + '\'' +
-                ", mushroom='" + mushroom + '\'' +
-                '}';
+        StringBuilder result = new StringBuilder("Pizza{");
+
+        if (cheese != null) {
+            result.append("cheese='").append(cheese).append('\'').append(", ");
+        }
+        if (meat != null) {
+            result.append("meat='").append(meat).append('\'').append(", ");
+        }
+        if (seafood != null) {
+            result.append("seafood='").append(seafood).append('\'').append(", ");
+        }
+        if (vegetable != null) {
+            result.append("vegetable='").append(vegetable).append('\'').append(", ");
+        }
+        if (mushroom != null) {
+            result.append("mushroom='").append(mushroom).append('\'');
+        }
+
+        if (result.charAt(result.length() - 2) == ',') {
+            result.delete(result.length() - 2, result.length());
+        }
+
+        result.append('}');
+        return result.toString();
     }
 }
 
