@@ -11,6 +11,14 @@ public class PizzaV2 {
         return new PizzaBuilderV2();
     }
 
+    public static PizzaV2 cook() {
+        return PizzaV2.base()
+                .addMeat("meatV2")
+                .addVegetable("vegetableV2")
+                .addCheese("cheeseV2")
+                .build();
+    }
+
     public static class PizzaBuilderV2 {
         private final PizzaV2 pizzaV2;
 

@@ -8,7 +8,8 @@ public class MainS3T1 {
                 .addMushroom("Mushroom")
                 .build();
         System.out.println(pizza);
-        System.out.println();
+
+        System.out.println(Pizza.cook());
 
         // My new version task01
         PizzaV2 pizzaV2 = PizzaV2.base()
@@ -17,6 +18,7 @@ public class MainS3T1 {
                 .addMeat("Asd")
                 .build();
         System.out.println(pizzaV2);
+        System.out.println(PizzaV2.cook());
     }
 
 }

@@ -18,6 +18,33 @@ public class Pizza {
     public static PizzaBuilder base() {
         return new PizzaBuilder();
     }
+    public static Pizza cook() {
+        return Pizza.base()
+                .addMeat("meat")
+                .addVegetable("vegetable")
+                .addCheese("cheese")
+                .build();
+    }
+
+    public String getCheese() {
+        return cheese;
+    }
+
+    public String getMeat() {
+        return meat;
+    }
+
+    public String getSeafood() {
+        return seafood;
+    }
+
+    public String getVegetable() {
+        return vegetable;
+    }
+
+    public String getMushroom() {
+        return mushroom;
+    }
 
     public static class PizzaBuilder {
         private String cheese;
