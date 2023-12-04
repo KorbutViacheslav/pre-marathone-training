@@ -7,40 +7,44 @@ public class PizzaV2 {
     private String vegetable;
     private String mushroom;
 
-    public static class PizzaBuilderV2 {
-        private final PizzaV2 pizza;
+    public static PizzaBuilderV2 base() {
+        return new PizzaBuilderV2();
+    }
 
-        public PizzaBuilderV2() {
-            pizza = new PizzaV2();
+    public static class PizzaBuilderV2 {
+        private final PizzaV2 pizzaV2;
+
+        private PizzaBuilderV2() {
+            pizzaV2 = new PizzaV2();
         }
 
         public PizzaBuilderV2 addCheese(String cheese) {
-            pizza.cheese = cheese;
+            pizzaV2.cheese = cheese;
             return this;
         }
 
         public PizzaBuilderV2 addMeat(String meat) {
-            pizza.meat = meat;
+            pizzaV2.meat = meat;
             return this;
         }
 
         public PizzaBuilderV2 addSeaFood(String seaFood) {
-            pizza.seafood = seaFood;
+            pizzaV2.seafood = seaFood;
             return this;
         }
 
         public PizzaBuilderV2 addVegetable(String vegetable) {
-            pizza.vegetable = vegetable;
+            pizzaV2.vegetable = vegetable;
             return this;
         }
 
         public PizzaBuilderV2 addMushroom(String mushroom) {
-            pizza.mushroom = mushroom;
+            pizzaV2.mushroom = mushroom;
             return this;
         }
 
         public PizzaV2 build() {
-            return pizza;
+            return pizzaV2;
         }
     }
 
