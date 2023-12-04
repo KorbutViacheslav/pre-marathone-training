@@ -13,4 +13,4 @@ public class NameList {
 ```
 
 Create public inner class named Iterator inside NameList class that correspond the next class diagram:
-![screenshot](https://github.com/bbogdasha/java-online-marathon/blob/master/sprint03/task02/screenshot/iterator.png)
+![screenshot](https://github.com/KorbutViacheslav/pre-marathone-training/blob/main/pre-marathone-training/sprint03/screenshots-tasks-s3/iterator.png?raw=true)
