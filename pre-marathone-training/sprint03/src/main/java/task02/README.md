@@ -1,4 +1,4 @@
-# Task02
+# Task02: Iterator Design Pattern
 
 Suppose we have the next class:
 

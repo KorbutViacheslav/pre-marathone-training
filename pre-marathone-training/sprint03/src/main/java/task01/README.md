@@ -1,6 +1,8 @@
-# Task01
+# Task01: Builder Design Pattern
+
 
 Suppose we have the next class:
+
 ```java
 public class Pizza {
     private String cheese;
@@ -11,7 +13,7 @@ public class Pizza {
 
     private Pizza() {
     }
-    
+
     public static PizzaBuilder base() {
         return new PizzaBuilder();
     }
