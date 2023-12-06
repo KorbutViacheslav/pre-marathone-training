@@ -18,6 +18,7 @@ public class Pizza {
     public static PizzaBuilder base() {
         return new PizzaBuilder();
     }
+
     public static Pizza cook() {
         return Pizza.base()
                 .addMeat("meat")
@@ -52,6 +53,9 @@ public class Pizza {
         private String seafood;
         private String vegetable;
         private String mushroom;
+
+        private PizzaBuilder() {
+        }
 
         public PizzaBuilder addCheese(String cheese) {
             this.cheese = cheese;

@@ -12,8 +12,8 @@ import static junit.framework.Assert.*;
 
 public class PizzaTest {
 
-    final private static String PIZZA = "src/main/java/task01/Pizza";
-    final private static String PIZZA_BUILDER = "src/main/java/task01/Pizza$PizzaBuilder";
+    final private static String PIZZA = "task01.Pizza";
+    final private static String PIZZA_BUILDER = "task01.Pizza$PizzaBuilder";
 
     @DisplayName("Check that Pizza class contains nested static class PizzaBuilder")
     @Test
@@ -129,7 +129,7 @@ public class PizzaTest {
             Method[] declaredMethods = clazz.getDeclaredMethods();
             boolean isAddSeaFoodMethod = false;
             for (final Method method : declaredMethods) {
-                if ("addSeafood".equals(method.getName())) {
+                if ("addSeaFood".equals(method.getName())) {
                     assertTrue(method.getReturnType().getSimpleName().equals("PizzaBuilder"));
                     isAddSeaFoodMethod = true;
                 }

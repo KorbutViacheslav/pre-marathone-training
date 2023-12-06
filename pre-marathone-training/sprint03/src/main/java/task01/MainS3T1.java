@@ -6,6 +6,7 @@ public class MainS3T1 {
                 .addCheese("Cheese")
                 .addMeat("Meat")
                 .addMushroom("Mushroom")
+                .addSeaFood("Krab")
                 .build();
         System.out.println(pizza);
 
