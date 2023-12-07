@@ -1,4 +1,4 @@
-# Task03
+# Task03: Strategy Design Pattern 
 
 Suppose we have **execute** method with next signature:
 ````java
