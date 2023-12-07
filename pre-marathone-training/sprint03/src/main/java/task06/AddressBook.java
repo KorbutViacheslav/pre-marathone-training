@@ -6,6 +6,10 @@ public class AddressBook implements Iterable {
     private AddressBook[] addressBooks;
     private int counter = 0;
 
+    public boolean create(String firstName, String lastName, String address) {
+        return false;
+    }
+
     @Override
     public Iterator iterator() {
         return null;
