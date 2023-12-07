@@ -14,9 +14,6 @@ public enum ClientType {
     }
 
     public double discount() {
-        if (month == 1) {
-            return 1.0;
-        }
         return (100 - this.month * this.coefficient) / 100;
     }
 }
