@@ -42,8 +42,7 @@ public class AddressBook implements Iterable {
         Person person = new Person(firstName, lastName);
         NameAddressPair nameAddressPair = new NameAddressPair(person, address);
         boolean updated = Arrays.stream(addressBooks)
-                .filter(pair -> pair != null &&
-                        pair.equals(nameAddressPair))
+                .filter(pair -> pair != null && pair.equals(nameAddressPair))
                 .peek(pair -> pair.address = address)
                 .findFirst()
                 .isPresent();
