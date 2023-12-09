@@ -1,4 +1,4 @@
-# Task 6: Records.
+# Task06: Records.
 
 ---
 Create class hierarchy that represent **Address Book**, where can be save records in format: **"(first name, last name) => address"**:
