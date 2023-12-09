@@ -51,8 +51,7 @@ public class AddressBook implements Iterable {
 
     public boolean delete(String firstName, String lastName) {
         return Arrays.asList(addressBooks)
-                .removeIf(pair -> pair != null &&
-                        pair.person != null &&
+                .removeIf(pair -> pair != null && pair.person != null &&
                         pair.person.equals(new Person(firstName, lastName)));
 
     }
