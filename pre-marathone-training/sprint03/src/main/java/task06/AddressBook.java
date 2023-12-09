@@ -55,6 +55,7 @@ public class AddressBook implements Iterable {
                 .removeIf(pair -> pair != null &&
                         pair.person != null &&
                         pair.person.equals(new Person(firstName, lastName)));
+
     }
 
     public int size() {
