@@ -1,4 +1,4 @@
-# Task06: Records.
+# Task06: All sprint patterns and concept
 
 ---
 Create class hierarchy that represent **Address Book**, where can be save records in format: **"(first name, last name) => address"**:

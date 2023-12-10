@@ -1,11 +1,8 @@
 package task06;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.Objects;
+import java.util.*;
 
-public class AddressBook implements Iterable {
+public class AddressBook implements Iterable<AddressBook> {
     //Fields
     private NameAddressPair[] addressBooks;
     private int counter = 0;
@@ -88,12 +85,12 @@ public class AddressBook implements Iterable {
     }
 
     @Override
-    public Iterator iterator() {
+    public Iterator<AddressBook> iterator() {
         return new AddressBookIterator();
     }
 
     private class AddressBookIterator implements Iterator {
-        private static int count = 0;
+        private int count = 0;
 
         @Override
         public boolean hasNext() {
@@ -103,9 +100,10 @@ public class AddressBook implements Iterable {
         @Override
         public String next() {
             if (!hasNext()) {
-                throw new ArrayIndexOutOfBoundsException("List with address absent.");
+                throw new NoSuchElementException("No more elements in the address book.");
             }
-            String nextAddressBook = addressBooks[count].toString();
+            NameAddressPair currentPair = addressBooks[count];
+            String nextAddressBook = (currentPair != null) ? currentPair.toString() : "null";
             count++;
             return nextAddressBook;
         }
@@ -116,7 +114,7 @@ public class AddressBook implements Iterable {
         private Person person;
         private String address;
 
-        public NameAddressPair(Person person, String address) {
+        private NameAddressPair(Person person, String address) {
             this.person = person;
             this.address = address;
         }
@@ -143,7 +141,7 @@ public class AddressBook implements Iterable {
             private String firstName;
             private String lastName;
 
-            public Person(String firstName, String lastName) {
+            private Person(String firstName, String lastName) {
                 this.firstName = firstName;
                 this.lastName = lastName;
             }

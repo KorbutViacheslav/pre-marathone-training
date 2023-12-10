@@ -1,6 +1,7 @@
 package task06;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 public class MainS3T6 {
     public static void main(String[] args) {
@@ -32,6 +33,11 @@ public class MainS3T6 {
         System.out.println("Delete status: " + deleteStatus);
         Arrays.stream(addressBook.getAddressBooks()).toList().forEach(System.out::println);
 
-
+        //Checked iterator
+        System.out.println();
+        Iterator iterator = addressBook.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next().toString());
+        }
     }
 }
