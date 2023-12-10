@@ -10,6 +10,10 @@ public class AddressBook implements Iterable {
     private NameAddressPair[] addressBooks;
     private int counter = 0;
 
+    public NameAddressPair[] getAddressBooks() {
+        return addressBooks;
+    }
+
     //Constructor
     public AddressBook(int capacity) {
         addressBooks = new NameAddressPair[capacity];
@@ -107,7 +111,7 @@ public class AddressBook implements Iterable {
     }
 
     //Inner classes
-    private static class NameAddressPair {
+    public static class NameAddressPair {
         private Person person;
         private String address;
 
