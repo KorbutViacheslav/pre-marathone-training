@@ -25,7 +25,7 @@ public class AddressBook implements Iterable {
         if (counter >= addressBooks.length) {
             addressBooks = Arrays.copyOf(addressBooks, 2 * counter);
         }
-        Person person = new Person(firstName, lastName);
+        NameAddressPair.Person person = new NameAddressPair.Person(firstName, lastName);
 
         for (int i = 0; i < counter; i++) {
             if (addressBooks[i].person.equals(person)) {
@@ -37,7 +37,7 @@ public class AddressBook implements Iterable {
     }
 
     public String read(String firstName, String lastName) {
-        Person person = new Person(firstName, lastName);
+        NameAddressPair.Person person = new NameAddressPair.Person(firstName, lastName);
         String name = Arrays.stream(addressBooks)
                 .filter(nameAddressPair -> nameAddressPair.person.equals(person))
                 .findFirst()
@@ -46,7 +46,7 @@ public class AddressBook implements Iterable {
     }
 
     public boolean update(String firstName, String lastName, String address) {
-        Person person = new Person(firstName, lastName);
+        NameAddressPair.Person person = new NameAddressPair.Person(firstName, lastName);
         return Arrays.stream(addressBooks)
                 .filter(pair -> pair.person.equals(person))
                 .findFirst()
@@ -58,7 +58,7 @@ public class AddressBook implements Iterable {
     }
 
     public boolean delete(String firstName, String lastName) {
-        Person personToDelete = new Person(firstName, lastName);
+        NameAddressPair.Person personToDelete = new NameAddressPair.Person(firstName, lastName);
         for (int i = 0; i < counter; i++) {
             if (addressBooks[i].person.equals(personToDelete)) {
                 System.arraycopy(addressBooks, i + 1, addressBooks, i, addressBooks.length - 1 - i);
@@ -137,37 +137,36 @@ public class AddressBook implements Iterable {
         public String toString() {
             return person + ", Address: " + address;
         }
-    }
 
-    private static class Person {
-        private String firstName;
-        private String lastName;
+        private static class Person {
+            private String firstName;
+            private String lastName;
 
-        public Person(String firstName, String lastName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
+            public Person(String firstName, String lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+
+            @Override
+            public boolean equals(Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+                Person person = (Person) o;
+                return Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName);
+            }
+
+            @Override
+            public int hashCode() {
+                return Objects.hash(firstName, lastName);
+            }
+
+            @Override
+            public String toString() {
+                return "FirstName: " + firstName + ", LastName: " + lastName;
+            }
         }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Person person = (Person) o;
-            return Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(firstName, lastName);
-        }
-
-        @Override
-        public String toString() {
-            return "FirstName: " + firstName + ", LastName: " + lastName;
-        }
-    }
-
-    enum SortedOrder {
-        ASC, DESC;
     }
 }
+
+//Enum
+enum SortedOrder {ASC, DESC}

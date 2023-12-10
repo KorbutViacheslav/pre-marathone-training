@@ -12,7 +12,7 @@ public class MainS3T6 {
         System.out.println(status);
         System.out.println(addressBook.read("Steven", "Taylor"));
         Arrays.stream(addressBook.getAddressBooks()).toList().forEach(System.out::println);
-        addressBook.sortedBy(AddressBook.SortedOrder.DESC);
+        addressBook.sortedBy(SortedOrder.DESC);
         Arrays.stream(addressBook.getAddressBooks()).toList().forEach(System.out::println);
         addressBook.create("Tom", "Stevens", "Address #5");
         System.out.println(addressBook.size());
