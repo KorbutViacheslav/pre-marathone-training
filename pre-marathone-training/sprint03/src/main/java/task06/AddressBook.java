@@ -41,7 +41,8 @@ public class AddressBook implements Iterable {
         String name = Arrays.stream(addressBooks)
                 .filter(nameAddressPair -> nameAddressPair.person.equals(person))
                 .findFirst()
-                .toString();
+                .map(NameAddressPair::toString)
+                .orElse("Person not found");
         return name;
     }
 
