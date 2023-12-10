@@ -16,12 +16,13 @@ Create class hierarchy that represent **Address Book**, where can be save record
 
 A class hierarchy should be correspond the next class diagram:
 
-![image](https://user-images.githubusercontent.com/22353523/166103234-e4abcaf7-4612-470d-9eef-b7a8ce024142.png)
+![image](https://github.com/KorbutViacheslav/pre-marathone-training/blob/main/pre-marathone-training/sprint03/screenshots-tasks-s3/task06sprint03.png?raw=true)
 
 The next graphic notation means, that B is inner class and A is outer class:
-
-![image](https://user-images.githubusercontent.com/22353523/166103250-dd6748fc-1634-4401-b0f2-0c373d6fbf53.png)
+> ## B &nbsp;&mdash;&mdash;⊕ A
 
 > If you see the next error: _uses unchecked or unsafe operations_, just put the next code line **@SuppressWarnings("unchecked")** over **AddressBook** and **AddressBookIterator** classes.
 
-> For correct passing of all tests don't use print and println methods in your code. 
+> For correct passing of all tests don't use print and println methods in your code.
+
+
