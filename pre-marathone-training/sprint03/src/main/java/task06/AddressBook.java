@@ -85,7 +85,7 @@ public class AddressBook implements Iterable<AddressBook> {
     }
 
     @Override
-    public Iterator<AddressBook> iterator() {
+    public Iterator iterator() {
         return new AddressBookIterator();
     }
 
