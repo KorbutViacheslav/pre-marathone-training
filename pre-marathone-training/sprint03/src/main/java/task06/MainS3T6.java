@@ -14,6 +14,12 @@ public class MainS3T6 {
         Arrays.stream(addressBook.getAddressBooks()).toList().forEach(System.out::println);
         addressBook.sortedBy(AddressBook.SortedOrder.DESC);
         Arrays.stream(addressBook.getAddressBooks()).toList().forEach(System.out::println);
+        addressBook.create("Tom", "Stevens", "Address #5");
+        System.out.println(addressBook.size());
+        Arrays.stream(addressBook.getAddressBooks()).toList().forEach(System.out::println);
+        addressBook.delete("John", "Brown");
+        Arrays.stream(addressBook.getAddressBooks()).toList().forEach(System.out::println);
+
 
     }
 }
