@@ -7,12 +7,11 @@ import java.util.Objects;
 public class AddressBook implements Iterable {
     //Fields
     private NameAddressPair[] addressBooks;
-    private int counter;
+    private int counter = 0;
 
     //Constructor
     public AddressBook(int capacity) {
         addressBooks = new NameAddressPair[capacity];
-        counter = (int) Arrays.stream(addressBooks).filter(Objects::nonNull).count();
     }
 
     //Methods
@@ -40,13 +39,14 @@ public class AddressBook implements Iterable {
 
     public boolean update(String firstName, String lastName, String address) {
         Person person = new Person(firstName, lastName);
-        NameAddressPair nameAddressPair = new NameAddressPair(person, address);
-        boolean updated = Arrays.stream(addressBooks)
-                .filter(pair -> pair != null && pair.equals(nameAddressPair))
-                .peek(pair -> pair.address = address)
+        return Arrays.stream(addressBooks)
+                .filter(pair -> pair.person.equals(person))
                 .findFirst()
-                .isPresent();
-        return updated;
+                .map(pair -> {
+                    pair.address = address;
+                    return true;
+                })
+                .orElse(false);
     }
 
     public boolean delete(String firstName, String lastName) {
