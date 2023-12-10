@@ -1,6 +1,7 @@
 package task06;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Objects;
 
@@ -21,8 +22,11 @@ public class AddressBook implements Iterable {
             addressBooks = Arrays.copyOf(addressBooks, 2 * counter);
         }
         Person person = new Person(firstName, lastName);
-        if (Arrays.stream(addressBooks).anyMatch(pair -> pair.person.equals(person))) {
-            return false;
+
+        for (int i = 0; i < counter; i++) {
+            if (addressBooks[i].person.equals(person)) {
+                return false;
+            }
         }
         addressBooks[counter++] = new NameAddressPair(person, address);
         return true;
@@ -50,10 +54,15 @@ public class AddressBook implements Iterable {
     }
 
     public boolean delete(String firstName, String lastName) {
-        return Arrays.asList(addressBooks)
-                .removeIf(pair -> pair != null && pair.person != null &&
-                        pair.person.equals(new Person(firstName, lastName)));
-
+        Person personToDelete = new Person(firstName, lastName);
+        for (int i = 0; i < counter; i++) {
+            if (addressBooks[i].person.equals(personToDelete)) {
+                System.arraycopy(addressBooks, i + 1, addressBooks, i, addressBooks.length - 1 - i);
+                counter--;
+                return true;
+            }
+        }
+        return false;
     }
 
     public int size() {
@@ -61,7 +70,16 @@ public class AddressBook implements Iterable {
     }
 
     public void sortedBy(SortedOrder sortedOrder) {
-        Arrays.sort(addressBooks);
+        Arrays.sort(addressBooks, new Comparator<NameAddressPair>() {
+            @Override
+            public int compare(NameAddressPair o1, NameAddressPair o2) {
+                int result = o1.person.firstName.compareTo(o2.person.firstName);
+                if (result == 0) {
+                    result = o1.person.lastName.compareTo(o2.person.lastName);
+                }
+                return sortedOrder == SortedOrder.ASC ? result : -result;
+            }
+        });
     }
 
     @Override

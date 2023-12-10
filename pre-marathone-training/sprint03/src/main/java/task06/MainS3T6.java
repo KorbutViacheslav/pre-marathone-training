@@ -1,0 +1,14 @@
+package task06;
+
+public class MainS3T6 {
+    public static void main(String[] args) {
+        AddressBook addressBook = new AddressBook(4);
+        addressBook.create("John", "Brown", "Address #1");
+        addressBook.create("Karen", "Davis", "Address #2");
+        addressBook.create("Steven", "Taylor", "Address #1");
+        boolean status = addressBook.update("Steven", "Taylor", "Address #3");
+        System.out.println(status);
+        System.out.println(addressBook.read("Steven", "Taylor").equals("Address #3"));
+
+    }
+}
