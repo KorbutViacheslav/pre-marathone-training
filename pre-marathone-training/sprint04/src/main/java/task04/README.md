@@ -4,6 +4,6 @@ In the class **ArrayUtil** write a **public static** generic method named "**set
 
 Examples of usage:
 
-![screenshot](https://github.com/bbogdasha/java-online-marathon/blob/master/sprint04/task04/screenshot/task04.png)
+![screenshot](https://github.com/KorbutViacheslav/pre-marathone-training/blob/main/pre-marathone-training/sprint04/screenshots/task04Sprint04.png)
 
 > For correct passing of all tests don't use **print** and **println** methods in your code.
