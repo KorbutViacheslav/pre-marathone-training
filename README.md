@@ -21,6 +21,26 @@
 * [Task 5](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint02\src\main\java\task05\README.md)
 * [Task 6](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint02\src\main\java\task06\README.md)
 </details>
+<details>
+<summary>Sprint 3. Inner, outer class. Enum.</summary>
+
+* [Task 1: Builder Design Pattern](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint03\src\main\java\task01\README.md)
+* [Task 2: Iterator Design Pattern](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint03\src\main\java\task02\README.md)
+* [Task 3: Strategy Design Pattern](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint03\src\main\java\task03\README.md)
+* [Task 4: Enum(Simple)](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint03\src\main\java\task04\README.md)
+* [Task 5: Enum(Advanced)](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint03\src\main\java\task05\README.md)
+* [Task 6: Little app (All sprint patterns and concepts)](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint03\src\main\java\task06\README.md)
+</details>
+<details>
+<summary>Sprint 4. Generics. Collections.</summary>
+
+* [Task 1: Collections. Map: collectors, grouping](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint04\src\main\java\task01\README.md)
+* [Task 2: Collection. List](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint04\src\main\java\task02\README.md)
+* [Task 3: Collection. Map](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint04\src\main\java\task03\README.md)
+* [Task 4: Generics](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint04\src\main\java\task04\README.md)
+* [Task 5: ](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint04\src\main\java\task05\README.md)
+* [Task 6: ](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint04\src\main\java\task06\README.md)
+</details>
 
 * Sprint 1. Class Design. Encapsulation.
 * Sprint 2. Inherintance. Polymorphism.

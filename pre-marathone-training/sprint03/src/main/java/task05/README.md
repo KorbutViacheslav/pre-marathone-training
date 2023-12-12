@@ -1,4 +1,4 @@
-# Task05: Enum.
+# Task05: Enum(Advanced)
 
 ---
 Create **ClientType** enum that contains NEW, SILVER, GOLD and PLATINUM constants that represent client status.

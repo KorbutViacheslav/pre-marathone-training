@@ -1,4 +1,4 @@
-# Task04. Enum.
+# Task04: Enum(Simple)
 
 Create a **LineType** enum that contains different kind of lines as constants **SOLID**, **DOTTED**, **DASHED** and **DOUBLE**.
 

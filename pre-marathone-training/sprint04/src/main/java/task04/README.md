@@ -5,7 +5,7 @@ the element in an array from the given position.
 
 Examples of usage:
 ````java
-//Print to dis[lay: 52
+        //Print to dis[lay: 52
         Integer[] numbers = new Integer[3];
         int numberFromSecondPosition = ArrayUtil.<Integer>setAndReturn(numbers, 52, 1);
         System.out.println(numberFromSecondPosition);

@@ -1,4 +1,4 @@
-# Task06: All sprint patterns and concept
+# Task06: Little app (All sprint patterns and concepts)
 
 ---
 Create class hierarchy that represent **Address Book**, where can be save records in format: **"(first name, last name) => address"**:
