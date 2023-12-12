@@ -1,4 +1,4 @@
-# Task02
+# Task02: Collection. List.
 
 Create the **commonStudents()** method of the **MyUtils** class to return a **HashSet** of common elements of two **student lists**.
 

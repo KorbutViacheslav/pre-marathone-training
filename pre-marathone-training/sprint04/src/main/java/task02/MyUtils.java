@@ -17,7 +17,7 @@ public class MyUtils {
     }
 
     public static List<Student> commonStudents(List<Student> l1, List<Student> l2) {
-        //Rough solution
+        /** Rough solution */
 /*        List<Student> students = new ArrayList<>(l1);
         students.addAll(l2);
         List<Student> unique = new ArrayList<>();
@@ -30,7 +30,7 @@ public class MyUtils {
             }
         }
         return result;*/
-        //Best solution
+        /**Best solution */
         List<Student> students = new ArrayList<>(l1);
         students.retainAll(l2);
         return students;
