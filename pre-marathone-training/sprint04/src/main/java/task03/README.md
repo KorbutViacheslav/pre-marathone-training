@@ -1,4 +1,4 @@
-# Task03
+# Task03: Collection. Map.
 
 Create a **listMapCompare()** method of the **MyUtils** class to compare the contents of a **list of strings** and the **values of a map**.
 
