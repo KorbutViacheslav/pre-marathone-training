@@ -4,7 +4,16 @@ In the class **ArrayUtil** write a **public static** generic method named "**set
 the element in an array from the given position.
 
 Examples of usage:
+````java
+//Print to dis[lay: 52
+        Integer[] numbers = new Integer[3];
+        int numberFromSecondPosition = ArrayUtil.<Integer>setAndReturn(numbers, 52, 1);
+        System.out.println(numberFromSecondPosition);
 
-![screenshot](https://github.com/KorbutViacheslav/pre-marathone-training/blob/main/pre-marathone-training/sprint04/screenshots/task04Sprint04.png?raw=true)
+        //Print to display: Hello
+        String[] words = new String[3];
+        String wordFromSecondPosition = ArrayUtil.<String>setAndReturn(words, "Hello", 1);
+        System.out.println(wordFromSecondPosition);
+````
 
 > For correct passing of all tests don't use **print** and **println** methods in your code.
