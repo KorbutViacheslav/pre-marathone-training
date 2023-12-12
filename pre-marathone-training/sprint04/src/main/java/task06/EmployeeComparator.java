@@ -2,9 +2,10 @@ package task06;
 
 import java.util.Comparator;
 
-public class EmployeeComparator implements Comparator {
+public class EmployeeComparator implements Comparator<Employee> {
+
     @Override
-    public int compare(Object o1, Object o2) {
-        return 0;
+    public int compare(Employee o1, Employee o2) {
+        return (int) (o1.getSalary() - o2.getSalary());
     }
 }
