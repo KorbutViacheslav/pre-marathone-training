@@ -1,6 +1,5 @@
 package task01;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +19,7 @@ public class MyUtils {
     }
 
     public static Map<String, List<String>> createNotebook(Map<String, String> map) {
+        /** Rough solution */
 /*        Map<String, List<String>> currentMap = new HashMap<>();
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String name = entry.getValue();
@@ -33,6 +33,7 @@ public class MyUtils {
             }
         }
         return currentMap;*/
+        /** Best solution */
         return map.entrySet()
                 .stream()
                 .collect(Collectors.groupingBy(

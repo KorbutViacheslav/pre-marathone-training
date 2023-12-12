@@ -1,4 +1,4 @@
-# Task01:Generics. Collections. Annotations
+# Task01:Collections. Map: collectors, grouping.
 
 Create a **createNotebook()** method of the **MyUtils** class to create a new map with **name** as key and **phone** list as value.  The method receives a map with **phone** as key and **name** as value.
 
