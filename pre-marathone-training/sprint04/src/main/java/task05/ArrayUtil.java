@@ -13,9 +13,12 @@ class ArrayUtil {
         System.out.println(averageValue2);
     }
 
-    public static <E> double averageValue(Array<E> array) {
-        E[] a = array.getArray();
-        E result = a[0];
-        return (double) result;
+    public static <T extends Number> double averageValue(Array<T> array) {
+        T[] elements = array.getArray();
+        double sum = 0.0;
+        for (T element : elements) {
+            sum += element.doubleValue();
+        }
+        return sum / array.length();
     }
 }
