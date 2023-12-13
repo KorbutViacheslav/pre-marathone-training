@@ -41,6 +41,16 @@
 * [Task 5: Generics](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint04\src\main\java\task05\README.md)
 * [Task 6: Generics. Enum. Collection. Comparator.](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint04\src\main\java\task06\README.md)
 </details>
+<details>
+<summary>Sprint 5. Exceptions.</summary>
+
+* [Task 1: ](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint05\src\main\java\task01\README.md)
+* [Task 2: ](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint05\src\main\java\task02\README.md)
+* [Task 3: ](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint05\src\main\java\task03\README.md)
+* [Task 4: ](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint05\src\main\java\task04\README.md)
+* [Task 5: ](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint05\src\main\java\task05\README.md)
+* [Task 6: ](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint05\src\main\java\task06\README.md)
+</details>
 
 * Sprint 1. Class Design. Encapsulation.
 * Sprint 2. Inherintance. Polymorphism.
