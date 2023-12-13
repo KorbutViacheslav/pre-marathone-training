@@ -38,8 +38,8 @@
 * [Task 2: Collection. List](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint04\src\main\java\task02\README.md)
 * [Task 3: Collection. Map](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint04\src\main\java\task03\README.md)
 * [Task 4: Generics](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint04\src\main\java\task04\README.md)
-* [Task 5: ](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint04\src\main\java\task05\README.md)
-* [Task 6: ](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint04\src\main\java\task06\README.md)
+* [Task 5: Generics](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint04\src\main\java\task05\README.md)
+* [Task 6: Generics. Enum. Collection. Comparator.](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint04\src\main\java\task06\README.md)
 </details>
 
 * Sprint 1. Class Design. Encapsulation.

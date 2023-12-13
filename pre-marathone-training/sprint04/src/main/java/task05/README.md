@@ -1,4 +1,4 @@
-# Task05
+# Task05: Generic.
 
 Suppose we have the next generic class:
 

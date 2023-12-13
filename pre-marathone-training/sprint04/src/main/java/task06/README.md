@@ -1,4 +1,4 @@
-# Task06
+# Task06: Generic. Enum. Collection. Comparator.
 
 Suppose we have the next class hierarchy:
 
