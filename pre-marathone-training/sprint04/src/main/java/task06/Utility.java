@@ -21,7 +21,5 @@ public class Utility {
         for (Person p : people) {
             System.out.println(p.toString());
         }
-
-
     }
 }
