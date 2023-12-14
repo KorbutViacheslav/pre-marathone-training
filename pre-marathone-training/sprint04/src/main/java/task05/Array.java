@@ -1,6 +1,6 @@
 package task05;
 
-class Array<T> {
+class Array<T extends Number> {
     private T[] array;
 
     public Array(T[] array) {
