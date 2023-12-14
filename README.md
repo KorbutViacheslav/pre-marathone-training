@@ -42,7 +42,7 @@
 * [Task 6: Generics. Enum. Collection. Comparator.](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint04\src\main\java\task06\README.md)
 </details>
 <details>
-<summary>Sprint 5. Exceptions.</summary>
+<summary>Sprint 5. Functional Interfaces. Lambda.</summary>
 
 * [Task 1: ](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint05\src\main\java\task01\README.md)
 * [Task 2: ](E:\JAVA\projekt\pre-marathone-training\pre-marathone-training\sprint05\src\main\java\task02\README.md)
