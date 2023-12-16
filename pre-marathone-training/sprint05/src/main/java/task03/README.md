@@ -1,4 +1,4 @@
-# Task 3
+# Task 3: BinaryOperator
 
 Suppose, we have the next class **Person**:
 ```java
