@@ -1,4 +1,4 @@
-# Task05:
+# Task05: Union several Predicates
 
 Implement a **static** method **getPredicateFromSet(...)** in **MyUtils** class.
 
