@@ -47,7 +47,7 @@
 * [Task 1: Predicate](pre-marathone-training\sprint05\src\main\java\task01\README.md)
 * [Task 2: Consumer](pre-marathone-training\sprint05\src\main\java\task02\README.md)
 * [Task 3: BinaryOperator](pre-marathone-training\sprint05\src\main\java\task03\README.md)
-* [Task 4: ](pre-marathone-training\sprint05\src\main\java\task04\README.md)
+* [Task 4: Functional Interface](pre-marathone-training\sprint05\src\main\java\task04\README.md)
 * [Task 5: ](pre-marathone-training\sprint05\src\main\java\task05\README.md)
 * [Task 6: ](pre-marathone-training\sprint05\src\main\java\task06\README.md)
 </details>
