@@ -54,7 +54,7 @@
 <details>
 <summary>Sprint 6. Stream API. Date and Time.</summary>
 
-* [Task 1: ](pre-marathone-training\sprint06\src\main\java\task01\README.md)
+* [Task 1: LocalDate(Leap year)](pre-marathone-training\sprint06\src\main\java\task01\README.md)
 * [Task 2: ](pre-marathone-training\sprint06\src\main\java\task02\README.md)
 * [Task 3: ](pre-marathone-training\sprint06\src\main\java\task03\README.md)
 * [Task 4: ](pre-marathone-training\sprint06\src\main\java\task04\README.md)
