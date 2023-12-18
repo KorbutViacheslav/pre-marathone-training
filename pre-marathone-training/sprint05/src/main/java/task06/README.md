@@ -1,4 +1,4 @@
-# Task 6:
+# Task 6: BiFunction
 
 Implement a **static** method **findMaxByCondition(...)** of **MyUtils** class that takes **List** of **integers** as a
 first parameter and predicate as a second and **returns** the ***max value*** from the list that satisfies the condition
