@@ -6,13 +6,14 @@ import java.nio.file.Paths;
 public class MainS6T4 {
     public static void main(String[] args) {
         String filePath = "pre-marathone-training/sprint06/src/main/java/task03/files-from-task/output.bin";
-        // Зчитування з файлу
+        // Read from file
         String readText = readFile(filePath);
         System.out.println("Text read from file: " + readText);
         System.out.println(binaryToText(readText));
 
     }
 
+    //Method for reading from a file
     public static String readFile(String filePath) {
         try {
             byte[] bytes = Files.readAllBytes(Paths.get(filePath));
@@ -23,6 +24,7 @@ public class MainS6T4 {
         }
     }
 
+    //Method for converted 7-bit to text
     public static String binaryToText(String binaryData) {
         StringBuilder text = new StringBuilder();
         for (int i = 0; i < binaryData.length(); i += 7) {
