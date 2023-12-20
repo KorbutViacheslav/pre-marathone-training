@@ -1,4 +1,4 @@
-# Task04: 
+# Task04: Read text from 7-bit file
 
 ---
 Create the method readFile(String filename) that read from file
