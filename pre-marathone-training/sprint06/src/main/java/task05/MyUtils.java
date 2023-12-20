@@ -1,9 +1,7 @@
 package task05;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -19,7 +17,6 @@ public class MyUtils {
     }
 
     public static void main(String[] args) {
-        // Приклад використання
         Map<String, Stream<String>> projectParticipants = Map.of(
                 "Desktop", Stream.of(" iVan", "PeTro ", " Ira "),
                 "Web", Stream.of("STepan", "ira ", " Andriy ", "an na"),
