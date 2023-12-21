@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class MyUtils {
+class MyUtils {
     public static Stream<String> nameList(Map<String, Stream<String>> map) {
         return map.values().stream()
                 .flatMap(i -> i)
