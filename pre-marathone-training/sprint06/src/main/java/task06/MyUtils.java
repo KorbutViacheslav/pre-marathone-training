@@ -10,7 +10,7 @@ class MyUtils {
                 Stream.of("093 987 65 43", "(050)1234567", "12-345"),
                 Stream.of("067-21-436-57", "050-2345678", "0939182736", "224-19-28"),
                 Stream.of("(093)-11-22-334", "044 435-62-18", "721-73-45"));
-        Map<String, Stream<String>> result = new MyUtils().phoneNumbers(givenList);
+        Map<String, Stream<String>> result = phoneNumbers(givenList);
         result.forEach((key, value) -> {
             System.out.print(key + " : ");
             System.out.println(value.collect(Collectors.joining(" , ")));
@@ -20,6 +20,9 @@ class MyUtils {
     public static Map<String, Stream<String>> phoneNumbers(List<Stream<String>> list){
         Map<String, Stream<String>> mapS = new HashMap<>();
         mapS.put("1",list.stream().flatMap(stringStream -> stringStream));
-        return mapS;
+        Map<String, Stream<String>> map2 = new HashMap<>();
+        Stream<String> s = list.stream().flatMap(stringStream -> stringStream).map(item ->item.replaceAll("[^\\d]","")).distinct();
+        map2.put("2",s);
+        return map2;
     }
 }
