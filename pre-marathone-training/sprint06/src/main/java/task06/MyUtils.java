@@ -1,6 +1,7 @@
 package task06;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -10,24 +11,49 @@ class MyUtils {
                 Stream.of("093 987 65 43", "(050)1234567", "12-345"),
                 Stream.of("067-21-436-57", "050-2345678", "0939182736", "224-19-28"),
                 Stream.of("(093)-11-22-334", "044 435-62-18", "721-73-45"));
-/*        Map<String, Stream<String>> result = phoneNumbers(givenList);
+        Map<String, Stream<String>> result = phoneNumbers(givenList);
         result.forEach((key, value) -> {
             System.out.print(key + " : ");
             System.out.println(value.collect(Collectors.joining(" , ")));
-        });*/
-        Map<String,String> r = phoneNumbers(givenList);
-        System.out.println(r);
+        });
+       /* Map<String,String> r = phoneNumbers(givenList);
+        System.out.println(r);*/
     }
-    public static Map<String,String> phoneNumbers(List<Stream<String>> list){
-        Map<String, Stream<String>> mapS = new HashMap<>();
-        mapS.put("1",list.stream().flatMap(stringStream -> stringStream));
+    public static Map<String,Stream<String>> phoneNumbers(List<Stream<String>> list) {
+/*        Map<String, Stream<String>> mapS = new HashMap<>();
+        Stream<String> stream = list.stream().flatMap(stringStream -> stringStream)
+                .map(item ->item.replaceAll("[^\\d]",""))
+                .distinct();
+        List<String> l = stream.toList();
+        for (String s :l){
+            //String tim = s.substring(3);
+            mapS.put(s.substring(0,3),Arrays.stream(s.split("\\s+")));
+        }*/
+
+/*
         Map<String, String> map2 = new HashMap<>();
         List<String> s = list.stream().flatMap(stringStream -> stringStream).map(item ->item.replaceAll("[^\\d]","")).distinct().toList();
         for(String l :s){
             map2.put(l.substring(0,3),l.substring(3));
         }
-
-
-        return map2;
+*/
+        return list.stream()
+                .flatMap(Function.identity())
+                .map(phone -> phone.replaceAll("[^\\d]",""))
+                .distinct()
+                .collect(Collectors.groupingBy(
+                        phone -> phone.matches("^050\\d{7}$") ? "050"
+                                : phone.matches("^067\\d{7}$") ? "067"
+                                : phone.matches("^093\\d{7}$") ? "093"
+                                : phone.matches("^044\\d{7}$") ? "044"
+                                : phone.matches("^\\d{7}$") ? "loc" : "err",
+                        Collectors.mapping(phone -> phone.matches("^\\d{7}$") ? phone.substring(3) : phone, Collectors.toList())
+                ))
+                .entrySet()
+                .stream()
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        entry -> entry.getValue().stream().sorted()
+                ));
     }
 }
