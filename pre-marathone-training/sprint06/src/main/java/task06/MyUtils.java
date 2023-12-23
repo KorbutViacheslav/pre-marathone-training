@@ -1,7 +1,8 @@
 package task06;
 
-import java.util.*;
-import java.util.function.Function;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -16,27 +17,10 @@ class MyUtils {
             System.out.print(key + " : ");
             System.out.println(value.collect(Collectors.joining(" , ")));
         });
-       /* Map<String,String> r = phoneNumbers(givenList);
-        System.out.println(r);*/
-    }
-    public static Map<String,Stream<String>> phoneNumbers(List<Stream<String>> list) {
-/*        Map<String, Stream<String>> mapS = new HashMap<>();
-        Stream<String> stream = list.stream().flatMap(stringStream -> stringStream)
-                .map(item ->item.replaceAll("[^\\d]",""))
-                .distinct();
-        List<String> l = stream.toList();
-        for (String s :l){
-            //String tim = s.substring(3);
-            mapS.put(s.substring(0,3),Arrays.stream(s.split("\\s+")));
-        }*/
 
-/*
-        Map<String, String> map2 = new HashMap<>();
-        List<String> s = list.stream().flatMap(stringStream -> stringStream).map(item ->item.replaceAll("[^\\d]","")).distinct().toList();
-        for(String l :s){
-            map2.put(l.substring(0,3),l.substring(3));
-        }
-*/
+    }
+
+    public static Map<String, Stream<String>> phoneNumbers(List<Stream<String>> list) {
         return list.stream()
                 .flatMap(s -> s)
                 .filter(s -> (s != null) && (!s.isEmpty()))
