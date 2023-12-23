@@ -59,7 +59,7 @@
 * [Task 3: Write text to 7-bit file](pre-marathone-training\sprint06\src\main\java\task03\README.md)
 * [Task 4: Read text from 7-bit file](pre-marathone-training\sprint06\src\main\java\task04\README.md)
 * [Task 5: ](pre-marathone-training\sprint06\src\main\java\task05\README.md)
-* [Task 6: ](pre-marathone-training\sprint06\src\main\java\task06\README.md)
+* [Task 6: Phone numbers stream](pre-marathone-training\sprint06\src\main\java\task06\README.md)
 </details>
 
 * Sprint 1. Class Design. Encapsulation.
