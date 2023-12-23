@@ -23,6 +23,9 @@ class MyUtils {
         mapS.put("1",list.stream().flatMap(stringStream -> stringStream));
         Map<String, List<String>> map2 = new HashMap<>();
         List<String> s = list.stream().flatMap(stringStream -> stringStream).map(item ->item.replaceAll("[^\\d]","")).distinct().toList();
+        for(String l :s){
+            map2.put(l,l);
+        }
         map2.put("2",s);
 
         return map2;
