@@ -60,6 +60,7 @@
 * [Task 4: Read text from 7-bit file](pre-marathone-training\sprint06\src\main\java\task04\README.md)
 * [Task 5: Name list](pre-marathone-training\sprint06\src\main\java\task05\README.md)
 * [Task 6: Phone numbers stream](pre-marathone-training\sprint06\src\main\java\task06\README.md)
+* [Task 7: Duplicate Integers Stream](pre-marathone-training\sprint06\src\main\java\task07\README.md)
 </details>
 
 * Sprint 1. Class Design. Encapsulation.
