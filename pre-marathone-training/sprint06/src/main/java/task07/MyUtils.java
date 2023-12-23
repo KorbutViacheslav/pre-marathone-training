@@ -1,5 +1,7 @@
 package task07;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -12,6 +14,7 @@ public class MyUtils {
     }
 
     public static Stream<Integer> duplicateElements(Stream<Integer> stream) {
-        return null;
+        List<Integer> s = stream.toList();
+        return s.stream().filter(i -> Collections.frequency(s, i) > 1).collect(Collectors.toSet()).stream();
     }
 }
