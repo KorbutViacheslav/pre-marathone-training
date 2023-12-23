@@ -15,18 +15,18 @@ class MyUtils {
             System.out.print(key + " : ");
             System.out.println(value.collect(Collectors.joining(" , ")));
         });*/
-        Map<String,List<String>> r = phoneNumbers(givenList);
+        Map<String,String> r = phoneNumbers(givenList);
         System.out.println(r);
     }
-    public static Map<String, List<String>> phoneNumbers(List<Stream<String>> list){
+    public static Map<String,String> phoneNumbers(List<Stream<String>> list){
         Map<String, Stream<String>> mapS = new HashMap<>();
         mapS.put("1",list.stream().flatMap(stringStream -> stringStream));
-        Map<String, List<String>> map2 = new HashMap<>();
+        Map<String, String> map2 = new HashMap<>();
         List<String> s = list.stream().flatMap(stringStream -> stringStream).map(item ->item.replaceAll("[^\\d]","")).distinct().toList();
         for(String l :s){
-            map2.put(l,l);
+            map2.put(l.substring(0,3),l.substring(3));
         }
-        map2.put("2",s);
+
 
         return map2;
     }
