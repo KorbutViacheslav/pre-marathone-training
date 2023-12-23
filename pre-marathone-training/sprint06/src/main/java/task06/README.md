@@ -1,4 +1,4 @@
-# Task06:
+# Task06: Phone numbers stream
 
 ---
 Create a `Map<String, Stream<String>> phoneNumbers(List<Stream<String>> list)` method
