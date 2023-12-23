@@ -38,22 +38,16 @@ class MyUtils {
         }
 */
         return list.stream()
-                .flatMap(Function.identity())
-                .map(phone -> phone.replaceAll("[^\\d]",""))
+                .flatMap(s -> s)
+                .filter(s -> (s != null) && (!s.isEmpty()))
+                .map(s -> s.replaceAll("[^\\d]", ""))
+                .map(s -> s.length() == 7 ? "loc".concat(s) : s.length() < 7 ? "err".concat(s) : s)
                 .distinct()
-                .collect(Collectors.groupingBy(
-                        phone -> phone.matches("^050\\d{7}$") ? "050"
-                                : phone.matches("^067\\d{7}$") ? "067"
-                                : phone.matches("^093\\d{7}$") ? "093"
-                                : phone.matches("^044\\d{7}$") ? "044"
-                                : phone.matches("^\\d{7}$") ? "loc" : "err",
-                        Collectors.mapping(phone -> phone.matches("^\\d{7}$") ? phone.substring(3) : phone, Collectors.toList())
-                ))
-                .entrySet()
-                .stream()
+                .collect(Collectors.groupingBy(s -> s.substring(0, 3)))
+                .entrySet().stream()
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
-                        entry -> entry.getValue().stream().sorted()
-                ));
+                        e -> e.getValue().stream().map(s -> s.substring(3))
+                                .sorted()));
     }
 }
