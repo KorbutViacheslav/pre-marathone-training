@@ -63,15 +63,15 @@
 * [Task 7: Duplicate Integers Stream](pre-marathone-training\sprint06\src\main\java\task07\README.md)
 </details>
 <details>
-<summary>Sprint 6. Annotations.</summary>
+<summary>Sprint 7. Annotations.</summary>
 
-* [Task 1: LocalDate(Leap year)](pre-marathone-training\sprint06\src\main\java\task01\README.md)
-* [Task 2: Local Data (Get Date after today)](pre-marathone-training\sprint06\src\main\java\task02\README.md)
-* [Task 3: Write text to 7-bit file](pre-marathone-training\sprint06\src\main\java\task03\README.md)
-* [Task 4: Read text from 7-bit file](pre-marathone-training\sprint06\src\main\java\task04\README.md)
-* [Task 5: Name list](pre-marathone-training\sprint06\src\main\java\task05\README.md)
-* [Task 6: Phone numbers stream](pre-marathone-training\sprint06\src\main\java\task06\README.md)
-* [Task 7: Duplicate Integers Stream](pre-marathone-training\sprint06\src\main\java\task07\README.md)
+* [Task 1: ](pre-marathone-training\sprint07\src\main\java\task01\README.md)
+* [Task 2: ](pre-marathone-training\sprint07\src\main\java\task02\README.md)
+* [Task 3: ](pre-marathone-training\sprint07\src\main\java\task03\README.md)
+* [Task 4: ](pre-marathone-training\sprint07\src\main\java\task04\README.md)
+* [Task 5: ](pre-marathone-training\sprint07\src\main\java\task05\README.md)
+* [Task 6: ](pre-marathone-training\sprint07\src\main\java\task06\README.md)
+* [Task 7: ](pre-marathone-training\sprint07\src\main\java\task07\README.md)
 </details>
 
 * Sprint 1. Class Design. Encapsulation.
