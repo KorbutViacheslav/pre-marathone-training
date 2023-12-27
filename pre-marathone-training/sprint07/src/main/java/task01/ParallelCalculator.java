@@ -3,7 +3,7 @@ package task01;
 import java.util.function.BinaryOperator;
 
 public class ParallelCalculator implements Runnable {
-    BinaryOperator<Integer> binaryOperator = Integer::sum;
+    BinaryOperator<Integer> binaryOperator;
     int operand1;
     int operand2;
     double result;
@@ -15,6 +15,7 @@ public class ParallelCalculator implements Runnable {
     }
 
     public void run() {
-        binaryOperator.apply(operand1, operand2);
+        System.out.println(result = (double) binaryOperator.apply(operand1, operand2));
+
     }
 }
