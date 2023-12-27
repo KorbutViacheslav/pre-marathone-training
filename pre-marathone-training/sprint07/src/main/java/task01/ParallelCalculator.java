@@ -6,7 +6,7 @@ public class ParallelCalculator implements Runnable {
     private final BinaryOperator<Integer> binaryOperator;
     private final int operand1;
     private final int operand2;
-    double result;
+    public double result;
 
     public ParallelCalculator(BinaryOperator<Integer> binaryOperator, int operand1, int operand2) {
         this.binaryOperator = binaryOperator;
@@ -15,7 +15,7 @@ public class ParallelCalculator implements Runnable {
     }
 
     public void run() {
-        System.out.println(result = (double) binaryOperator.apply(operand1, operand2));
+        System.out.println(result = binaryOperator.apply(operand1, operand2));
 
     }
 }
