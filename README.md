@@ -63,7 +63,7 @@
 * [Task 7: Duplicate Integers Stream](pre-marathone-training\sprint06\src\main\java\task07\README.md)
 </details>
 <details>
-<summary>Sprint 7. Annotations.</summary>
+<summary>Sprint 7. Multithreading.</summary>
 
 * [Task 1: ](pre-marathone-training\sprint07\src\main\java\task01\README.md)
 * [Task 2: ](pre-marathone-training\sprint07\src\main\java\task02\README.md)
@@ -78,10 +78,10 @@
 * Sprint 2. Inherintance. Polymorphism.
 * Sprint 3. Inner, outer class. Enum.
 * Sprint 4. Generics. Collections.
-* Sprint 5. Exceptions.
+* Sprint 5. Exceptions. ---
 * Sprint 6. Functional Interfaces. Lambda.
 * Sprint 7. Stream API. Date and Time.
-* Sprint 8. Annotations.
+* Sprint 8. Annotations. ---
 * Sprint 9. Multithreading.
 * Sprint 10. JDBC.
 * Sprint 11. Servlets.
