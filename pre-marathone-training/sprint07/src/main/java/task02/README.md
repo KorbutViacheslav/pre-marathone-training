@@ -1,4 +1,4 @@
-# Task 2:
+# Task 2: Accountant sum
 
 Suppose, you have class from task #1 **ParallelCalculator** that is able to execute an operation in separate thread.
 It uses an implementation of **Runnable** interface for this.
