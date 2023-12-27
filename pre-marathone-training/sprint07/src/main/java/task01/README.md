@@ -1,4 +1,4 @@
-# Task01
+# Task01: ParallelCalculator
 
 Create ParallelCalculator class that will be able to execute an operation in parallel thread.
 

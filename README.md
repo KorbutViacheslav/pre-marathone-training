@@ -65,13 +65,10 @@
 <details>
 <summary>Sprint 7. Multithreading.</summary>
 
-* [Task 1: ](pre-marathone-training\sprint07\src\main\java\task01\README.md)
+* [Task 1: ParallelCalculator](pre-marathone-training\sprint07\src\main\java\task01\README.md)
 * [Task 2: ](pre-marathone-training\sprint07\src\main\java\task02\README.md)
 * [Task 3: ](pre-marathone-training\sprint07\src\main\java\task03\README.md)
 * [Task 4: ](pre-marathone-training\sprint07\src\main\java\task04\README.md)
-* [Task 5: ](pre-marathone-training\sprint07\src\main\java\task05\README.md)
-* [Task 6: ](pre-marathone-training\sprint07\src\main\java\task06\README.md)
-* [Task 7: ](pre-marathone-training\sprint07\src\main\java\task07\README.md)
 </details>
 
 * Sprint 1. Class Design. Encapsulation.
