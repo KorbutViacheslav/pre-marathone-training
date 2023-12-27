@@ -3,9 +3,9 @@ package task01;
 import java.util.function.BinaryOperator;
 
 public class ParallelCalculator implements Runnable {
-    BinaryOperator<Integer> binaryOperator;
-    int operand1;
-    int operand2;
+    private final BinaryOperator<Integer> binaryOperator;
+    private final int operand1;
+    private final int operand2;
     double result;
 
     public ParallelCalculator(BinaryOperator<Integer> binaryOperator, int operand1, int operand2) {
