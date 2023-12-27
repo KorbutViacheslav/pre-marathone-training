@@ -15,7 +15,8 @@ public class ParallelCalculator implements Runnable {
     }
 
     public void run() {
-        System.out.println(result = binaryOperator.apply(operand1, operand2));
+        result = binaryOperator.apply(operand1, operand2);
+        System.out.println(result);
 
     }
 }
