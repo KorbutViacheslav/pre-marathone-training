@@ -1,4 +1,4 @@
-# Task03:
+# Task03: ThreadExample
 
 Suppose, we have the next class:
 ```java
