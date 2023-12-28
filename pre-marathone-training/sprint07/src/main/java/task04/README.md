@@ -1,4 +1,4 @@
-# Task04: 
+# Task04: MyThreads
 
 Suppose, we have the next class:
 ````java

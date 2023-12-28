@@ -68,7 +68,7 @@
 * [Task 1: ParallelCalculator](pre-marathone-training\sprint07\src\main\java\task01\README.md)
 * [Task 2: Accountant sum](pre-marathone-training\sprint07\src\main\java\task02\README.md)
 * [Task 3: ThreadExample](pre-marathone-training\sprint07\src\main\java\task03\README.md)
-* [Task 4: ](pre-marathone-training\sprint07\src\main\java\task04\README.md)
+* [Task 4: MyThreads](pre-marathone-training\sprint07\src\main\java\task04\README.md)
 </details>
 
 * Sprint 1. Class Design. Encapsulation.
