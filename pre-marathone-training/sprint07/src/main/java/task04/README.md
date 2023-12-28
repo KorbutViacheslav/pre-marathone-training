@@ -39,14 +39,14 @@ Suppose, we have the next class:
              }
         };   
     }
-
+````
 Fix the problem with the preloaded implementation of the class **MyThread**.
 
 Test starts both threads with the code:
 
         MyThreads.t1.start();
         MyThreads.t2.start();
-````
+
 The goal of each thread is to update **m** and **n** fields and not switch between threads **while loop is executed**.
 
 You need to get an output like this:<br/>
