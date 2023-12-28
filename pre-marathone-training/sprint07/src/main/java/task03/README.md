@@ -36,6 +36,7 @@ Suppose, we have the next class:
     }
 ```
 You need to implement the methods of the **Interactor** class so that output will look like this:
+
 **_Serving thread running<br/>
 Serving thread initializes the key<br/>
 key = -7<br/>

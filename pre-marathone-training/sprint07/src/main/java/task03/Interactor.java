@@ -4,7 +4,7 @@ import java.util.function.BinaryOperator;
 import java.util.function.UnaryOperator;
 
 public class Interactor {
-    public int x;
+    private int x;
 
     synchronized public void serve(UnaryOperator<Integer> uo, int initializer) throws InterruptedException {
         System.out.println("Serving thread running");
