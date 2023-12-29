@@ -71,15 +71,15 @@
 * [Task 4: MyThreads](pre-marathone-training\sprint07\src\main\java\task04\README.md)
 </details>
 
-* Sprint 1. Class Design. Encapsulation.
-* Sprint 2. Inherintance. Polymorphism.
-* Sprint 3. Inner, outer class. Enum.
-* Sprint 4. Generics. Collections.
+* Sprint 1. Class Design. Encapsulation.+++
+* Sprint 2. Inherintance. Polymorphism.+++
+* Sprint 3. Inner, outer class. Enum.+++
+* Sprint 4. Generics. Collections.+++
 * Sprint 5. Exceptions. ---
-* Sprint 6. Functional Interfaces. Lambda.
-* Sprint 7. Stream API. Date and Time.
+* Sprint 6. Functional Interfaces. Lambda.+++
+* Sprint 7. Stream API. Date and Time.+++
 * Sprint 8. Annotations. ---
-* Sprint 9. Multithreading.
+* Sprint 9. Multithreading.+++
 * Sprint 10. JDBC.
 * Sprint 11. Servlets.
 * Sprint 12. Introduction To Spring. IoC.
