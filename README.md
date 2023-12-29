@@ -70,6 +70,12 @@
 * [Task 3: ThreadExample](pre-marathone-training\sprint07\src\main\java\task03\README.md)
 * [Task 4: MyThreads](pre-marathone-training\sprint07\src\main\java\task04\README.md)
 </details>
+<details>
+<summary>Sprint 8. JDBC.</summary>
+
+* [Task: JDBC](pre-marathone-training\sprint08\src\main\java\README.md)
+
+</details>
 
 * Sprint 1. Class Design. Encapsulation.+++
 * Sprint 2. Inherintance. Polymorphism.+++
