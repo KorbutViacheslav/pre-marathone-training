@@ -6,6 +6,11 @@ public class MainS8 {
         myUtils.createConnection();
         myUtils.createStatement();
         myUtils.createSchema("test08");
-        myUtils.dropSchema();
+
+        myUtils.useSchema();
+        myUtils.createTableRoles();
+        myUtils.createTableDirections();
+        myUtils.createTableProjects();
+        myUtils.createTableEmployee();
     }
 }
