@@ -6,11 +6,12 @@ import java.sql.Statement;
 public class MyUtils {
     Connection connection;
     Statement statement;
+    String schemaName;
+    private static final String name = "postgres";
+    private static final String password = "postgres";
+    private static final String url = "jdbc:postgresql://localhost:5432/postgres";
 
     public Connection createConnection() throws SQLException {
-        String name = "postgres";
-        String password = "postgres";
-        String url = "jdbc:postgresql://localhost:5432/postgres";
         connection = DriverManager.getConnection(url, name, password);
         return connection;
     }
@@ -29,15 +30,19 @@ public class MyUtils {
     }
 
     public void createSchema(String schemaName) throws SQLException {
-
+        this.schemaName = schemaName;
+        String request = "CREATE SCHEMA " + schemaName + ";";
+        statement.execute(request);
     }
 
     public void dropSchema() throws SQLException {
-
+        String request = "DROP SCHEMA " + schemaName + ";";
+        statement.execute(request);
     }
 
     public void useSchema() throws SQLException {
-
+        String request = "SET SCHEMA " + schemaName + ";";
+        statement.execute(request);
     }
 
     /**
