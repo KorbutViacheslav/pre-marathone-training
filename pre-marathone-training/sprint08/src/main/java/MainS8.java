@@ -5,6 +5,7 @@ public class MainS8 {
         MyUtils myUtils = new MyUtils();
         myUtils.createConnection();
         myUtils.createStatement();
+
         myUtils.createSchema("test08");
 
         myUtils.useSchema();
