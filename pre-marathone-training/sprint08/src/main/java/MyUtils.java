@@ -4,23 +4,28 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class MyUtils {
+    Connection connection;
+    Statement statement;
+
     public Connection createConnection() throws SQLException {
         String name = "postgres";
         String password = "postgres";
         String url = "jdbc:postgresql://localhost:5432/postgres";
-        return DriverManager.getConnection(url, name, password);
+        connection = DriverManager.getConnection(url, name, password);
+        return connection;
     }
 
     public void closeConnection() throws SQLException {
-
+        connection.close();
     }
 
     public Statement createStatement() throws SQLException {
-        return createConnection().createStatement();
+        statement = createConnection().createStatement();
+        return statement;
     }
 
     public void closeStatement() throws SQLException {
-
+        statement.close();
     }
 
     public void createSchema(String schemaName) throws SQLException {
@@ -32,6 +37,31 @@ public class MyUtils {
     }
 
     public void useSchema() throws SQLException {
+
+    }
+
+    /**
+     * Methods for creating tables
+     *
+     * @throws SQLException
+     */
+    public void createTableRoles() throws SQLException {
+
+    }
+
+    public void createTableDirections() throws SQLException {
+
+    }
+
+    public void createTableProjects() throws SQLException {
+
+    }
+
+    public void createTableEmployee() throws SQLException {
+
+    }
+
+    public void dropTable(String tableName) throws SQLException {
 
     }
 }
