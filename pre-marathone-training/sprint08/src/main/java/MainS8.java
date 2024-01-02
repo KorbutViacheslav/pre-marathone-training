@@ -9,6 +9,7 @@ public class MainS8 {
         myUtils.createSchema("test08");
 
         myUtils.useSchema();
+
         myUtils.createTableRoles();
         myUtils.createTableDirections();
         myUtils.createTableProjects();
