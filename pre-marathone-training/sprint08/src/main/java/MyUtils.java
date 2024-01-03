@@ -93,16 +93,18 @@ public class MyUtils {
     }
 
     public void insertTableDirections(String directionName) throws SQLException {
-        String request = "INSERT INTO roles (direction_name) VALUES (" + directionName + ");";
+        String request = "INSERT INTO directions (direction_name) VALUES (" + directionName + ");";
         statement.execute(request);
     }
 
     public void insertTableProjects(String projectName, String directionName) throws SQLException {
-
+        String request = "INSERT INTO projects (project_name,direction_id) VALUES (" + projectName + ",(SELECT(id) FROM directions WHERE direction_name LIKE "+directionName+"));";
+        statement.execute(request);
     }
 
     public void insertTableEmployee(String firstName, String roleName, String projectName) throws SQLException {
-
+        String request = "INSERT INTO projects (project_name,direction_id) VALUES (" + projectName + ",(SELECT(id) FROM directions WHERE direction_name LIKE "+directionName+"));";
+        statement.execute(request);
     }
 
     /**
