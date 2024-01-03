@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyUtils {
@@ -173,11 +174,27 @@ public class MyUtils {
 
     //Get all Role, Direction, Projects and Employee
     public List getAllRoles() throws SQLException {
-        return null;
+        List<String> rolesList = new ArrayList<>();
+        String requestRole = "SELECT(role_name) FROM roles;";
+
+        ResultSet resultSetRole = statement.executeQuery(requestRole);
+
+        while (resultSetRole.next()) {
+            rolesList.add(resultSetRole.getString("role_name"));
+        }
+        return rolesList;
     }
 
     public List getAllDirection() throws SQLException {
-        return null;
+        List<String> directionList = new ArrayList<>();
+        String requestDirection = "SELECT(direction_name) FROM directions;";
+
+        ResultSet resultSetDirection = statement.executeQuery(requestDirection);
+
+        while (resultSetDirection.next()) {
+            directionList.add(resultSetDirection.getString("direction_name"));
+        }
+        return directionList;
     }
 
     public List getAllProjects() throws SQLException {

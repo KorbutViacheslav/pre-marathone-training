@@ -28,5 +28,7 @@ public class MainS8 {
                 + ", " + myUtils.getDirectionId("Java")
                 + ", " + myUtils.getProjectId("JavaAPI")
                 + ", " + myUtils.getEmployeeId("Max"));
+        myUtils.getAllRoles().forEach(System.out::println);
+        myUtils.getAllDirection().forEach(System.out::println);
     }
 }
