@@ -88,11 +88,13 @@ public class MyUtils {
      * @throws SQLException
      */
     public void insertTableRoles(String roleName) throws SQLException {
-
+        String request = "INSERT INTO roles (role_name) VALUES (" + roleName + ");";
+        statement.execute(request);
     }
 
     public void insertTableDirections(String directionName) throws SQLException {
-
+        String request = "INSERT INTO roles (direction_name) VALUES (" + directionName + ");";
+        statement.execute(request);
     }
 
     public void insertTableProjects(String projectName, String directionName) throws SQLException {
