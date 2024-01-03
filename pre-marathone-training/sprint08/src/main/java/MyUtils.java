@@ -38,7 +38,7 @@ public class MyUtils {
 
     public void createSchema(String schemaName) throws SQLException {
         this.schemaName = schemaName;
-        String request = "CREATE SCHEMA " + schemaName + ";";
+        String request = "CREATE SCHEMA IF NOT EXISTS " + schemaName + ";";
         statement.execute(request);
     }
 
@@ -58,22 +58,22 @@ public class MyUtils {
      * @throws SQLException
      */
     public void createTableRoles() throws SQLException {
-        String request = " CREATE TABLE roles(id SERIAL PRIMARY KEY, role_name VARCHAR NOT NULL); ";
+        String request = " CREATE TABLE IF NOT EXISTS roles(id SERIAL PRIMARY KEY, role_name VARCHAR NOT NULL); ";
         statement.execute(request);
     }
 
     public void createTableDirections() throws SQLException {
-        String request = "CREATE TABLE directions(id SERIAL PRIMARY KEY, direction_name VARCHAR NOT NULL);";
+        String request = "CREATE TABLE IF NOT EXISTS directions(id SERIAL PRIMARY KEY, direction_name VARCHAR NOT NULL);";
         statement.execute(request);
     }
 
     public void createTableProjects() throws SQLException {
-        String request = "CREATE TABLE projects(id SERIAL PRIMARY KEY,project_name VARCHAR NOT NULL,direction_id INT REFERENCES directions(id));";
+        String request = "CREATE TABLE IF NOT EXISTS projects(id SERIAL PRIMARY KEY,project_name VARCHAR NOT NULL,direction_id INT REFERENCES directions(id));";
         statement.execute(request);
     }
 
     public void createTableEmployee() throws SQLException {
-        String request = "CREATE TABLE employee(id SERIAL PRIMARY KEY,first_name VARCHAR NOT NULL,role_id INT REFERENCES roles (id),project_id INT REFERENCES projects(id));";
+        String request = "CREATE TABLE IF NOT EXISTS employee(id SERIAL PRIMARY KEY,first_name VARCHAR NOT NULL,role_id INT REFERENCES roles (id),project_id INT REFERENCES projects(id));";
         statement.execute(request);
     }
 
@@ -89,24 +89,24 @@ public class MyUtils {
      */
     public void insertTableRoles(String roleName) throws SQLException {
         String request = "INSERT INTO roles (role_name) VALUES (" + roleName + ");";
-        statement.execute(request);
+        statement.executeUpdate(request);
     }
 
     public void insertTableDirections(String directionName) throws SQLException {
         String request = "INSERT INTO directions (direction_name) VALUES (" + directionName + ");";
-        statement.execute(request);
+        statement.executeUpdate(request);
     }
 
     public void insertTableProjects(String projectName, String directionName) throws SQLException {
         String request = "INSERT INTO projects (project_name,direction_id) VALUES (" + projectName + ",(SELECT(id) FROM directions WHERE direction_name LIKE " + directionName + "));";
-        statement.execute(request);
+        statement.executeUpdate(request);
     }
 
     public void insertTableEmployee(String firstName, String roleName, String projectName) throws SQLException {
         String requestRoleName = "SELECT(id) FROM roles WHERE role_name LIKE " + roleName + ");";
         String requestProjectName = "SELECT(id) FROM projects WHERE projects_name LIKE " + projectName + ");";
         String request = "INSERT INTO employee (first_name,role_id, project_id) VALUES (" + firstName + ",(" + requestRoleName + "),(" + requestProjectName + "));";
-        statement.execute(request);
+        statement.executeUpdate(request);
     }
 
     /**
