@@ -30,5 +30,9 @@ public class MainS8 {
                 + ", " + myUtils.getEmployeeId("Max"));
         myUtils.getAllRoles().forEach(System.out::println);
         myUtils.getAllDirection().forEach(System.out::println);
+        myUtils.getAllProjects().forEach(System.out::println);
+        myUtils.getAllEmployee().forEach(System.out::println);
+        myUtils.getAllDevelopers().forEach(System.out::println);
+        myUtils.getAllJavaDevelopers().forEach(System.out::println);
     }
 }

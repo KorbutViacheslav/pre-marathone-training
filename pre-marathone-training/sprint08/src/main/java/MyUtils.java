@@ -252,10 +252,15 @@ public class MyUtils {
     public List getAllJavaDevelopers() throws SQLException {
         List<String> list = new ArrayList<>();
 
-        String request = "SELECT(first_name) FROM employee WHERE role_id = '"
-                + getRoleId("Developer") + "' AND '"+ getDirectionId("Java") + "';";
+        String experiment = """
+                SELECT e.first_name
+                FROM employee e
+                JOIN roles r ON e.role_id = r.id
+                JOIN projects p ON e.project_id = p.id
+                JOIN directions d ON p.direction_id = d.id
+                WHERE r.role_name = 'Developer' AND d.direction_name = 'Java';""";
 
-        ResultSet rs = statement.executeQuery(request);
+        ResultSet rs = statement.executeQuery(experiment);
 
         while (rs.next()) {
             list.add(rs.getString("first_name"));
