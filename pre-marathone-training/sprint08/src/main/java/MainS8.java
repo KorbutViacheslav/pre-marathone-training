@@ -42,5 +42,7 @@ public class MainS8 {
         myUtils.getAllDevelopers().forEach(System.out::println);
         System.out.println("-JavaDevelopers-");
         myUtils.getAllJavaDevelopers().forEach(System.out::println);
+        System.out.println("-JavaProjects-");
+        myUtils.getAllJavaProjects().forEach(System.out::println);
     }
 }

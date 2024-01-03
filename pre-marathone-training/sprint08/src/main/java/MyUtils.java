@@ -173,85 +173,39 @@ public class MyUtils {
     }
 
     //Get all Role, Direction, Projects and Employee
-    public List getAllRoles() throws SQLException {
-        List<String> rolesList = new ArrayList<>();
+    public List<String> getAllRoles() throws SQLException {
         String requestRole = "SELECT(role_name) FROM roles;";
-
-        ResultSet resultSetRole = statement.executeQuery(requestRole);
-
-        while (resultSetRole.next()) {
-            rolesList.add(resultSetRole.getString("role_name"));
-        }
-        return rolesList;
+        return multiMethod(requestRole, "role_name");
     }
 
-    public List getAllDirection() throws SQLException {
-        List<String> list = new ArrayList<>();
+    public List<String> getAllDirection() throws SQLException {
         String request = "SELECT(direction_name) FROM directions;";
-
-        ResultSet rs = statement.executeQuery(request);
-
-        while (rs.next()) {
-            list.add(rs.getString("direction_name"));
-        }
-        return list;
+        return multiMethod(request, "direction_name");
     }
 
-    public List getAllProjects() throws SQLException {
-        List<String> list = new ArrayList<>();
+    public List<String> getAllProjects() throws SQLException {
         String request = "SELECT(project_name) FROM projects;";
-
-        ResultSet rs = statement.executeQuery(request);
-
-        while (rs.next()) {
-            list.add(rs.getString("project_name"));
-        }
-        return list;
+        return multiMethod(request, "project_name");
     }
 
-    public List getAllEmployee() throws SQLException {
-        List<String> list = new ArrayList<>();
+    public List<String> getAllEmployee() throws SQLException {
         String request = "SELECT(first_name) FROM employee;";
-
-        ResultSet rs = statement.executeQuery(request);
-
-        while (rs.next()) {
-            list.add(rs.getString("first_name"));
-        }
-        return list;
+        return multiMethod(request, "first_name");
     }
 
-    public List getAllDevelopers() throws SQLException {
-        List<String> list = new ArrayList<>();
-
+    public List<String> getAllDevelopers() throws SQLException {
         String request = "SELECT(first_name) FROM employee WHERE role_id = '"
                 + getRoleId("Developer") + "';";
-
-        ResultSet rs = statement.executeQuery(request);
-
-        while (rs.next()) {
-            list.add(rs.getString("first_name"));
-        }
-        return list;
+        return multiMethod(request, "first_name");
     }
 
-    public List getAllJavaProjects() throws SQLException {
-        List<String> list = new ArrayList<>();
-
+    public List<String> getAllJavaProjects() throws SQLException {
         String request = "SELECT(project_name) FROM projects WHERE direction_id = '"
                 + getDirectionId("Java") + "';";
-
-        ResultSet rs = statement.executeQuery(request);
-
-        while (rs.next()) {
-            list.add(rs.getString("project_name"));
-        }
-        return list;
+        return multiMethod(request, "project_name");
     }
 
-    public List getAllJavaDevelopers() throws SQLException {
-        List<String> list = new ArrayList<>();
-
+    public List<String> getAllJavaDevelopers() throws SQLException {
         String experiment = """
                 SELECT e.first_name
                 FROM employee e
@@ -259,12 +213,20 @@ public class MyUtils {
                 JOIN projects p ON e.project_id = p.id
                 JOIN directions d ON p.direction_id = d.id
                 WHERE r.role_name = 'Developer' AND d.direction_name = 'Java';""";
+        return multiMethod(experiment, "first_name");
+    }
 
-        ResultSet rs = statement.executeQuery(experiment);
-
-        while (rs.next()) {
-            list.add(rs.getString("first_name"));
+    /**
+     * MultiMethod
+     *
+     * @return list of String
+     */
+    private List<String> multiMethod(String request, String column) throws SQLException {
+        List<String> rolesList = new ArrayList<>();
+        ResultSet resultSetRole = statement.executeQuery(request);
+        while (resultSetRole.next()) {
+            rolesList.add(resultSetRole.getString(column));
         }
-        return list;
+        return rolesList;
     }
 }
