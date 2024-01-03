@@ -13,7 +13,7 @@ public class MainS8 {
         myUtils.useSchema();
 
         myUtils.createTableRoles();
-        myUtils.insertTableRoles("Developer");
+        //myUtils.insertTableRoles("Developer");
 
         myUtils.createTableDirections();
         //myUtils.insertTableDirections("Java");
@@ -22,6 +22,6 @@ public class MainS8 {
         //myUtils.insertTableProjects("JavaAPI","Java");
 
         myUtils.createTableEmployee();
-        //myUtils.insertTableEmployee("Max","Developer","JavaAPI");
+        myUtils.insertTableEmployee("Max","Developer","JavaAPI");
     }
 }

@@ -88,24 +88,25 @@ public class MyUtils {
      * @throws SQLException
      */
     public void insertTableRoles(String roleName) throws SQLException {
-        String request = "INSERT INTO roles (role_name) VALUES (" + roleName + ");";
+        String request = "INSERT INTO roles (role_name) VALUES ('" + roleName + "');";
         statement.executeUpdate(request);
     }
 
     public void insertTableDirections(String directionName) throws SQLException {
-        String request = "INSERT INTO directions (direction_name) VALUES (" + directionName + ");";
+        String request = "INSERT INTO directions (direction_name) VALUES ('" + directionName + "');";
         statement.executeUpdate(request);
     }
 
     public void insertTableProjects(String projectName, String directionName) throws SQLException {
-        String request = "INSERT INTO projects (project_name,direction_id) VALUES (" + projectName + ",(SELECT(id) FROM directions WHERE direction_name LIKE " + directionName + "));";
+        String request = "INSERT INTO projects (project_name,direction_id) VALUES ('" + projectName + "',(SELECT(id) FROM directions WHERE direction_name LIKE '" + directionName + "'));";
         statement.executeUpdate(request);
     }
 
     public void insertTableEmployee(String firstName, String roleName, String projectName) throws SQLException {
-        String requestRoleName = "SELECT(id) FROM roles WHERE role_name LIKE " + roleName + ");";
-        String requestProjectName = "SELECT(id) FROM projects WHERE projects_name LIKE " + projectName + ");";
-        String request = "INSERT INTO employee (first_name,role_id, project_id) VALUES (" + firstName + ",(" + requestRoleName + "),(" + requestProjectName + "));";
+        String requestRoleName = "SELECT(id) FROM roles WHERE role_name LIKE '" + roleName + "');";
+        int i = Integer.valueOf(requestRoleName);
+        String requestProjectName = "SELECT(id) FROM projects WHERE projects_name LIKE '" + projectName + "');";
+        String request = "INSERT INTO employee (first_name,role_id, project_id) VALUES ('" + firstName + "',('" + requestRoleName + "'),('" + requestProjectName + "'));";
         statement.executeUpdate(request);
     }
 
