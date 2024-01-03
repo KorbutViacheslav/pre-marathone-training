@@ -186,31 +186,65 @@ public class MyUtils {
     }
 
     public List getAllDirection() throws SQLException {
-        List<String> directionList = new ArrayList<>();
-        String requestDirection = "SELECT(direction_name) FROM directions;";
+        List<String> list = new ArrayList<>();
+        String request = "SELECT(direction_name) FROM directions;";
 
-        ResultSet resultSetDirection = statement.executeQuery(requestDirection);
+        ResultSet rs = statement.executeQuery(request);
 
-        while (resultSetDirection.next()) {
-            directionList.add(resultSetDirection.getString("direction_name"));
+        while (rs.next()) {
+            list.add(rs.getString("direction_name"));
         }
-        return directionList;
+        return list;
     }
 
     public List getAllProjects() throws SQLException {
-        return null;
+        List<String> list = new ArrayList<>();
+        String request = "SELECT(project_name) FROM projects;";
+
+        ResultSet rs = statement.executeQuery(request);
+
+        while (rs.next()) {
+            list.add(rs.getString("project_name"));
+        }
+        return list;
     }
 
     public List getAllEmployee() throws SQLException {
-        return null;
+        List<String> list = new ArrayList<>();
+        String request = "SELECT(first_name) FROM employee;";
+
+        ResultSet rs = statement.executeQuery(request);
+
+        while (rs.next()) {
+            list.add(rs.getString("first_name"));
+        }
+        return list;
     }
 
     public List getAllDevelopers() throws SQLException {
-        return null;
+        List<String> list = new ArrayList<>();
+
+        String request = "SELECT(first_name) FROM employee WHERE role_id = '" + getRoleId("Developer") + "';";
+
+        ResultSet rs = statement.executeQuery(request);
+
+        while (rs.next()) {
+            list.add(rs.getString("first_name"));
+        }
+        return list;
     }
 
     public List getAllJavaProjects() throws SQLException {
-        return null;
+        List<String> list = new ArrayList<>();
+
+        String request = "SELECT(first_name) FROM employee WHERE role_id = '" + getRoleId("Developer") + "';";
+
+        ResultSet rs = statement.executeQuery(request);
+
+        while (rs.next()) {
+            list.add(rs.getString("first_name"));
+        }
+        return list;
     }
 
     public List getAllJavaDevelopers() throws SQLException {
