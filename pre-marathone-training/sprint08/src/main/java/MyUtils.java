@@ -80,4 +80,30 @@ public class MyUtils {
         String request = "DROP TABLE " + tableName + ";";
         statement.execute(request);
     }
+
+    /**
+     * Methods for insert data to tables
+     *
+     * @throws SQLException
+     */
+    public void insertTableRoles(String roleName) throws SQLException {
+
+    }
+
+    public void insertTableDirections(String directionName) throws SQLException {
+
+    }
+
+    public void insertTableProjects(String projectName, String directionName) throws SQLException {
+
+    }
+
+    public void insertTableEmployee(String firstName, String roleName, String projectName) throws SQLException {
+
+    }
+    /**
+     * Methods to obtaining data from tables
+     *
+     * @throws SQLException
+     */
 }
