@@ -11,6 +11,12 @@ public class MyUtils {
     private static final String password = "postgres";
     private static final String url = "jdbc:postgresql://localhost:5432/postgres";
 
+    /**
+     * Methods for connection and creating schema.
+     *
+     * @throws SQLException
+     */
+
     public Connection createConnection() throws SQLException {
         connection = DriverManager.getConnection(url, name, password);
         return connection;
@@ -41,7 +47,7 @@ public class MyUtils {
     }
 
     public void useSchema() throws SQLException {
-        String request = "SET SCHEMA " + schemaName + ";";
+        String request = "SET search_path TO " + this.schemaName + ";";
         statement.execute(request);
     }
 
