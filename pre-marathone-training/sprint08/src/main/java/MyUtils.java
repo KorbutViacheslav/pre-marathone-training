@@ -2,6 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 public class MyUtils {
     Connection connection;
@@ -101,9 +102,53 @@ public class MyUtils {
     public void insertTableEmployee(String firstName, String roleName, String projectName) throws SQLException {
 
     }
+
     /**
      * Methods to obtaining data from tables
      *
      * @throws SQLException
      */
+    public int getRoleId(String roleName) throws SQLException {
+        return 0;
+    }
+
+    public int getDirectionId(String directionName) throws SQLException {
+        return 0;
+    }
+
+    public int getProjectId(String projectName) throws SQLException {
+        return 0;
+    }
+
+    public int getEmployeeId(String firstName) throws SQLException {
+        return 0;
+    }
+
+    public List getAllRoles() throws SQLException {
+        return null;
+    }
+
+    public List getAllDirestion() throws SQLException {
+        return null;
+    }
+
+    public List getAllProjects() throws SQLException {
+        return null;
+    }
+
+    public List getAllEmployee() throws SQLException {
+        return null;
+    }
+
+    public List getAllDevelopers() throws SQLException {
+        return null;
+    }
+
+    public List getAllJavaProjects() throws SQLException {
+        return null;
+    }
+
+    public List getAllJavaDevelopers() throws SQLException {
+        return null;
+    }
 }
