@@ -224,7 +224,8 @@ public class MyUtils {
     public List getAllDevelopers() throws SQLException {
         List<String> list = new ArrayList<>();
 
-        String request = "SELECT(first_name) FROM employee WHERE role_id = '" + getRoleId("Developer") + "';";
+        String request = "SELECT(first_name) FROM employee WHERE role_id = '"
+                + getRoleId("Developer") + "';";
 
         ResultSet rs = statement.executeQuery(request);
 
@@ -237,7 +238,22 @@ public class MyUtils {
     public List getAllJavaProjects() throws SQLException {
         List<String> list = new ArrayList<>();
 
-        String request = "SELECT(first_name) FROM employee WHERE role_id = '" + getRoleId("Developer") + "';";
+        String request = "SELECT(project_name) FROM projects WHERE direction_id = '"
+                + getDirectionId("Java") + "';";
+
+        ResultSet rs = statement.executeQuery(request);
+
+        while (rs.next()) {
+            list.add(rs.getString("project_name"));
+        }
+        return list;
+    }
+
+    public List getAllJavaDevelopers() throws SQLException {
+        List<String> list = new ArrayList<>();
+
+        String request = "SELECT(first_name) FROM employee WHERE role_id = '"
+                + getRoleId("Developer") + "' AND '"+ getDirectionId("Java") + "';";
 
         ResultSet rs = statement.executeQuery(request);
 
@@ -245,9 +261,5 @@ public class MyUtils {
             list.add(rs.getString("first_name"));
         }
         return list;
-    }
-
-    public List getAllJavaDevelopers() throws SQLException {
-        return null;
     }
 }
