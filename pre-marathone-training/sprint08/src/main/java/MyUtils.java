@@ -104,14 +104,14 @@ public class MyUtils {
 
         ResultSet resultSetRoleName = statement.executeQuery(requestRoleName);
         int roleId = 0;
-        while (resultSetRoleName.next()){
+        while (resultSetRoleName.next()) {
             roleId = resultSetRoleName.getInt("id");
         }
         String requestProjectName = "SELECT(id) FROM projects WHERE project_name LIKE '" + projectName + "';";
 
         ResultSet resultSetProjectName = statement.executeQuery(requestProjectName);
         int projectId = 0;
-        while (resultSetProjectName.next()){
+        while (resultSetProjectName.next()) {
             projectId = resultSetProjectName.getInt("id");
         }
         String request = "INSERT INTO employee (first_name,role_id, project_id) VALUES ('" + firstName + "',('" + roleId + "'),('" + projectId + "'));";
@@ -123,27 +123,60 @@ public class MyUtils {
      *
      * @throws SQLException
      */
+    //Get Role, Direction, Projects and Employee id
     public int getRoleId(String roleName) throws SQLException {
-        return 0;
+        String requestRoleName = "SELECT(id) FROM roles WHERE role_name LIKE '" + roleName + "';";
+
+        ResultSet resultSetRoleName = statement.executeQuery(requestRoleName);
+
+        int roleId = 0;
+        while (resultSetRoleName.next()) {
+            roleId = resultSetRoleName.getInt("id");
+        }
+        return roleId;
     }
 
     public int getDirectionId(String directionName) throws SQLException {
-        return 0;
+        String requestDirectionName = "SELECT(id) FROM directions WHERE direction_name LIKE '" + directionName + "';";
+
+        ResultSet resultSetDirectionName = statement.executeQuery(requestDirectionName);
+
+        int directionId = 0;
+        while (resultSetDirectionName.next()) {
+            directionId = resultSetDirectionName.getInt("id");
+        }
+        return directionId;
     }
 
     public int getProjectId(String projectName) throws SQLException {
-        return 0;
+        String requestProjectName = "SELECT(id) FROM projects WHERE project_name LIKE '" + projectName + "';";
+
+        ResultSet resultSetProjectName = statement.executeQuery(requestProjectName);
+        int projectId = 0;
+        while (resultSetProjectName.next()) {
+            projectId = resultSetProjectName.getInt("id");
+        }
+        return projectId;
     }
 
     public int getEmployeeId(String firstName) throws SQLException {
-        return 0;
+        String requestEmployeeName = "SELECT(id) FROM employee WHERE first_name LIKE '" + firstName + "';";
+
+        ResultSet resultSetEmployeeName = statement.executeQuery(requestEmployeeName);
+
+        int employeeId = 0;
+        while (resultSetEmployeeName.next()) {
+            employeeId = resultSetEmployeeName.getInt("id");
+        }
+        return employeeId;
     }
 
+    //Get all Role, Direction, Projects and Employee
     public List getAllRoles() throws SQLException {
         return null;
     }
 
-    public List getAllDirestion() throws SQLException {
+    public List getAllDirection() throws SQLException {
         return null;
     }
 

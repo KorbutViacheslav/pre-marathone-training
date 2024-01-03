@@ -22,6 +22,11 @@ public class MainS8 {
         //myUtils.insertTableProjects("JavaAPI","Java");
 
         myUtils.createTableEmployee();
-        myUtils.insertTableEmployee("Max","Developer","JavaAPI");
+        //myUtils.insertTableEmployee("Max","Developer","JavaAPI");
+
+        System.out.println(myUtils.getRoleId("Developer")
+                + ", " + myUtils.getDirectionId("Java")
+                + ", " + myUtils.getProjectId("JavaAPI")
+                + ", " + myUtils.getEmployeeId("Max"));
     }
 }
