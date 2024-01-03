@@ -12,8 +12,6 @@ public class MyUtils {
 
     /**
      * Methods for connection and creating schema.
-     *
-     * @throws SQLException
      */
 
     public Connection createConnection() throws SQLException {
@@ -52,8 +50,6 @@ public class MyUtils {
 
     /**
      * Methods for creating tables
-     *
-     * @throws SQLException
      */
     public void createTableRoles() throws SQLException {
         String request = " CREATE TABLE IF NOT EXISTS roles(id SERIAL PRIMARY KEY, role_name VARCHAR NOT NULL); ";
@@ -82,8 +78,6 @@ public class MyUtils {
 
     /**
      * Methods for insert data to tables
-     *
-     * @throws SQLException
      */
     public void insertTableRoles(String roleName) throws SQLException {
         String request = "INSERT INTO roles (role_name) VALUES ('" + roleName + "');";
@@ -121,55 +115,26 @@ public class MyUtils {
 
     /**
      * Methods to obtaining data from tables
-     *
-     * @throws SQLException
      */
     //Get Role, Direction, Projects and Employee id
     public int getRoleId(String roleName) throws SQLException {
-        String requestRoleName = "SELECT(id) FROM roles WHERE role_name LIKE '" + roleName + "';";
-
-        ResultSet resultSetRoleName = statement.executeQuery(requestRoleName);
-
-        int roleId = 0;
-        while (resultSetRoleName.next()) {
-            roleId = resultSetRoleName.getInt("id");
-        }
-        return roleId;
+        String request = "SELECT(id) FROM roles WHERE role_name LIKE '" + roleName + "';";
+        return multiIntegerMethod(request);
     }
 
     public int getDirectionId(String directionName) throws SQLException {
-        String requestDirectionName = "SELECT(id) FROM directions WHERE direction_name LIKE '" + directionName + "';";
-
-        ResultSet resultSetDirectionName = statement.executeQuery(requestDirectionName);
-
-        int directionId = 0;
-        while (resultSetDirectionName.next()) {
-            directionId = resultSetDirectionName.getInt("id");
-        }
-        return directionId;
+        String request = "SELECT(id) FROM directions WHERE direction_name LIKE '" + directionName + "';";
+        return multiIntegerMethod(request);
     }
 
     public int getProjectId(String projectName) throws SQLException {
-        String requestProjectName = "SELECT(id) FROM projects WHERE project_name LIKE '" + projectName + "';";
-
-        ResultSet resultSetProjectName = statement.executeQuery(requestProjectName);
-        int projectId = 0;
-        while (resultSetProjectName.next()) {
-            projectId = resultSetProjectName.getInt("id");
-        }
-        return projectId;
+        String request = "SELECT(id) FROM projects WHERE project_name LIKE '" + projectName + "';";
+        return multiIntegerMethod(request);
     }
 
     public int getEmployeeId(String firstName) throws SQLException {
-        String requestEmployeeName = "SELECT(id) FROM employee WHERE first_name LIKE '" + firstName + "';";
-
-        ResultSet resultSetEmployeeName = statement.executeQuery(requestEmployeeName);
-
-        int employeeId = 0;
-        while (resultSetEmployeeName.next()) {
-            employeeId = resultSetEmployeeName.getInt("id");
-        }
-        return employeeId;
+        String request = "SELECT(id) FROM employee WHERE first_name LIKE '" + firstName + "';";
+        return multiIntegerMethod(request);
     }
 
     //Get all Role, Direction, Projects and Employee
@@ -228,5 +193,19 @@ public class MyUtils {
             rolesList.add(resultSetRole.getString(column));
         }
         return rolesList;
+    }
+
+    /**
+     * Multi Integer Method
+     *
+     * @return id as Integer
+     */
+    private int multiIntegerMethod(String request) throws SQLException {
+        int employeeId = 0;
+        ResultSet resultSetEmployeeName = statement.executeQuery(request);
+        while (resultSetEmployeeName.next()) {
+            employeeId = resultSetEmployeeName.getInt("id");
+        }
+        return employeeId;
     }
 }
