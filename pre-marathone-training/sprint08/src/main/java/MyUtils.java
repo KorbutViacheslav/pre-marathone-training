@@ -1,7 +1,4 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.List;
 
 public class MyUtils {
@@ -103,10 +100,21 @@ public class MyUtils {
     }
 
     public void insertTableEmployee(String firstName, String roleName, String projectName) throws SQLException {
-        String requestRoleName = "SELECT(id) FROM roles WHERE role_name LIKE '" + roleName + "');";
-        int i = Integer.valueOf(requestRoleName);
-        String requestProjectName = "SELECT(id) FROM projects WHERE projects_name LIKE '" + projectName + "');";
-        String request = "INSERT INTO employee (first_name,role_id, project_id) VALUES ('" + firstName + "',('" + requestRoleName + "'),('" + requestProjectName + "'));";
+        String requestRoleName = "SELECT(id) FROM roles WHERE role_name LIKE '" + roleName + "';";
+
+        ResultSet resultSetRoleName = statement.executeQuery(requestRoleName);
+        int roleId = 0;
+        while (resultSetRoleName.next()){
+            roleId = resultSetRoleName.getInt("id");
+        }
+        String requestProjectName = "SELECT(id) FROM projects WHERE project_name LIKE '" + projectName + "';";
+
+        ResultSet resultSetProjectName = statement.executeQuery(requestProjectName);
+        int projectId = 0;
+        while (resultSetProjectName.next()){
+            projectId = resultSetProjectName.getInt("id");
+        }
+        String request = "INSERT INTO employee (first_name,role_id, project_id) VALUES ('" + firstName + "',('" + roleId + "'),('" + projectId + "'));";
         statement.executeUpdate(request);
     }
 
