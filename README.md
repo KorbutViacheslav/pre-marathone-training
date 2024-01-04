@@ -73,7 +73,13 @@
 <details>
 <summary>Sprint 8. JDBC.</summary>
 
-* [Task: JDBC](pre-marathone-training\sprint08\src\main\java\README.md)
+* [Task: JDBC](pre-marathone-training\sprint08\README.md)
+
+</details>
+<details>
+<summary>Sprint 9. Servlets.</summary>
+
+* [Task: Servlets](pre-marathone-training\sprint09\README.md)
 
 </details>
 
@@ -86,7 +92,7 @@
 * Sprint 7. Stream API. Date and Time.+++
 * Sprint 8. Annotations. ---
 * Sprint 9. Multithreading.+++
-* Sprint 10. JDBC.
+* Sprint 10. JDBC.+++
 * Sprint 11. Servlets.
 * Sprint 12. Introduction To Spring. IoC.
 * Sprint 13. ORM. Hibernate with Spring. Part 1.
