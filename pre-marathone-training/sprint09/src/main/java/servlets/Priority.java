@@ -1,4 +1,4 @@
-package org.example;
+package servlets;
 
 public enum Priority {
     LOW, MEDIUM, HIGH
