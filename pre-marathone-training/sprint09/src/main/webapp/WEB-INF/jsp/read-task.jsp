@@ -6,31 +6,31 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<html lang="en">
 <head>
-    <title>Read task</title>
+    <% request.setAttribute("pageTitle", "Read existing Task"); %>
+    <%@ include file="head.jsp" %>
 </head>
 <body>
-<%@include file="header.jsp" %>
-<h2>Read existing Task</h2>
+<%@ include file="navigation.jsp" %>
+<h1>${request.getAttribute("pageTitle")}</h1>
+
 <%
     Task task = (Task) request.getAttribute("task");
 %>
+
 <table>
     <tr>
-        <td>Id:</td>
-        <th><%=task.getId()%>
-        </th>
+        <td>Id: </td>
+        <td><b><%=task.getId()%></b></td>
     </tr>
     <tr>
-        <td>Name:</td>
-        <th><%=task.getTitle()%>
-        </th>
+        <td>Title: </td>
+        <td><b><%=task.getTitle()%></b></td>
     </tr>
     <tr>
-        <td>Priority:</td>
-        <th><%=task.getPriority()%>
-        </th>
+        <td>Priority: </td>
+        <td><b><%=task.getPriority()%></b></td>
     </tr>
 </table>
 
