@@ -28,17 +28,8 @@ public class TaskRepo {
     }
 
     public boolean update(Task newTask) {
-        Task oldTask = read(newTask.getId());
-        if (oldTask != null) {
-            boolean status = all().stream()
-                    .filter(task -> task.getId() != oldTask.getId())
-                    .anyMatch(task -> task.getTitle().equals(newTask.getTitle()));
-            if (!status) {
-                return todo.set(todo.indexOf(oldTask), newTask) != null;
-            }
-            return false;
-        }
-        return false;
+        int index = todo.indexOf(read(newTask.getId()));
+        return todo.set(index, newTask) != null;
     }
 
     public boolean delete(int id) {
