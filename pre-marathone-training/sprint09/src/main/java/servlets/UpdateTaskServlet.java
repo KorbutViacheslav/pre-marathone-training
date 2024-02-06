@@ -21,7 +21,7 @@ public class UpdateTaskServlet extends HttpServlet {
 
     @Override
     public void init() {
-        taskRepository = new TaskRepo();
+        taskRepository = TaskRepo.getTaskRepository();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,7 +32,7 @@ public class UpdateTaskServlet extends HttpServlet {
                 response.setStatus(HttpServletResponse.SC_NOT_FOUND);
                 request.setAttribute("message", "Task with ID " + id + " not found!");
                 request.setAttribute("url", "/edit-task");
-                request.getRequestDispatcher(JspHelper.getPath("error")).forward(request, response);
+                request.getRequestDispatcher(JspHelper.getPath("error-page")).forward(request, response);
             } else {
                 request.setAttribute("task", task);
                 request.getRequestDispatcher(JspHelper.getPath("edit-task")).forward(request, response);
@@ -40,7 +40,7 @@ public class UpdateTaskServlet extends HttpServlet {
         } catch (NumberFormatException e) {
             request.setAttribute("message", "You must enter the task id!");
             request.setAttribute("url", "/edit-task");
-            request.getRequestDispatcher(JspHelper.getPath("error")).forward(request, response);
+            request.getRequestDispatcher(JspHelper.getPath("error-page")).forward(request, response);
         }
     }
 

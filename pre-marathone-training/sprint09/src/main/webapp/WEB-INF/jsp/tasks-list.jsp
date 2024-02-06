@@ -8,8 +8,6 @@
 </head>
 <body>
 <%@ include file="navigation.jsp" %>
-<h1>${request.getAttribute("pageTitle")}</h1>
-
 
 <%
     List<Task> tasks = (List<Task>) request.getAttribute("tasks");

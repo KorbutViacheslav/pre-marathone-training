@@ -7,7 +7,7 @@
 </head>
 <body>
 <%@ include file="navigation.jsp" %>
-<h1>${request.getAttribute("pageTitle")}</h1>
+
 
 <%
     Task task = (Task) request.getAttribute("task");
@@ -15,16 +15,19 @@
 
 <table>
     <tr>
-        <td>Id: </td>
-        <td><b><%=task.getId()%></b></td>
+        <td>Id:</td>
+        <td><b><%=task.getId()%>
+        </b></td>
     </tr>
     <tr>
-        <td>Title: </td>
-        <td><b><%=task.getTitle()%></b></td>
+        <td>Title:</td>
+        <td><b><%=task.getTitle()%>
+        </b></td>
     </tr>
     <tr>
-        <td>Priority: </td>
-        <td><b><%=task.getPriority()%></b></td>
+        <td>Priority:</td>
+        <td><b><%=task.getPriority()%>
+        </b></td>
     </tr>
 </table>
 

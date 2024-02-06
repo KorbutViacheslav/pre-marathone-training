@@ -19,7 +19,7 @@ public class DeleteTaskServlet extends HttpServlet {
 
     @Override
     public void init()  {
-        taskRepository = new TaskRepo();
+        taskRepository = TaskRepo.getTaskRepository();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,7 +30,7 @@ public class DeleteTaskServlet extends HttpServlet {
             request.setAttribute("message", "Task with ID " + taskId + " not found!");
             request.setAttribute("url", request.getContextPath() + "/delete-task?id=" + taskId);
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher(JspHelper.getPath("error"));
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher(JspHelper.getPath("error-page"));
             requestDispatcher.forward(request, response);
         }
     }

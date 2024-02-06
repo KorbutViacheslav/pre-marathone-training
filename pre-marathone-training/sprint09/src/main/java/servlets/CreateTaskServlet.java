@@ -19,7 +19,7 @@ public class CreateTaskServlet extends HttpServlet {
 
     @Override
     public void init() {
-        taskRepository = new TaskRepo();
+        taskRepository = TaskRepo.getTaskRepository();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

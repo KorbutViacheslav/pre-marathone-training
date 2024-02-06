@@ -7,53 +7,60 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class TaskRepo {
-    private final List<Task> todo;
+    private final List<Task> listOfTask;
 
-    public TaskRepo() {
-        todo = new LinkedList<>();
-        todo.add(new Task("Task #1", Priority.MEDIUM));
-        todo.add(new Task("Task #2", Priority.LOW));
+    private TaskRepo() {
+        listOfTask = new LinkedList<>();
+        listOfTask.add(new Task("Task #1", Priority.MEDIUM));
+        listOfTask.add(new Task("Task #2", Priority.LOW));
     }
 
     public boolean create(Task task) {
-        boolean status = todo.stream().anyMatch(t -> t.getTitle().equals(task.getTitle()));
-        if (!status) {
-            return todo.add(task);
+        if (!isTaskTitleTaken(task.getTitle())) {
+            listOfTask.add(task);
+            return true;
         }
+
         return false;
     }
 
     public Task read(int id) {
-        return todo.stream().filter(task -> task.getId() == id).findFirst().orElse(null);
+        return listOfTask.stream().filter(task -> task.getId() == id).findFirst().orElse(null);
     }
 
     public boolean update(Task task, int id) {
-        int index = todo.indexOf(read(id));
-        return todo.set(index, task) != null;
+        int index = listOfTask.indexOf(read(id));
+        return listOfTask.set(index, task) != null;
     }
+
 
     public boolean delete(int id) {
         Task task = read(id);
         if (task != null) {
-            return todo.remove(task);
+            return listOfTask.remove(task);
         }
         return false;
     }
 
     public List<Task> all() {
-        return todo;
+        return listOfTask;
     }
 
     public void deleteAll() {
-        todo.clear();
+        listOfTask.clear();
     }
 
-    private static TaskRepo taskRepo = null;
+    private static TaskRepo taskRepository = null;
 
-    public synchronized static TaskRepo getTaskRepo() {
-        if (taskRepo == null) {
-            taskRepo = new TaskRepo();
+    public synchronized static TaskRepo getTaskRepository() {
+        if (taskRepository == null) {
+            taskRepository = new TaskRepo();
         }
-        return taskRepo;
+        return taskRepository;
     }
+
+    public boolean isTaskTitleTaken(String title) {
+        return listOfTask.stream().anyMatch(task -> task.getTitle().equals(title));
+    }
+
 }

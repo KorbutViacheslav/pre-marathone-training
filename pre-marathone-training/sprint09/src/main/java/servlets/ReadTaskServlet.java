@@ -16,7 +16,7 @@ public class ReadTaskServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        taskRepo = new TaskRepo();
+        taskRepo = TaskRepo.getTaskRepository();
     }
 
     @Override
@@ -31,7 +31,7 @@ public class ReadTaskServlet extends HttpServlet {
             req.setAttribute("message", "Task with ID " + taskId + " not found!");
             req.setAttribute("url", req.getContextPath() + "/read-task?id=" + taskId);
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            var requestDispatcher = req.getRequestDispatcher("WEB-INF/jsp/error.jsp");
+            var requestDispatcher = req.getRequestDispatcher("WEB-INF/jsp/error-page.jsp");
             requestDispatcher.forward(req, resp);
         }
     }
