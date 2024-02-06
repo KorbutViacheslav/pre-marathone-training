@@ -1,10 +1,4 @@
-<%@ page import="model.Task" %><%--
-  Created by IntelliJ IDEA.
-  User: Viacheslav
-  Date: 12.01.2024
-  Time: 14:36
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="model.Task" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
@@ -36,3 +30,5 @@
 
 </body>
 </html>
+
+

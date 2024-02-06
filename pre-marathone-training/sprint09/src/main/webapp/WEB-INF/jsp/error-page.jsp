@@ -8,15 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Error page</title>
+    <% request.setAttribute("pageTitle", "Error Page"); %>
+    <%@ include file="head.jsp" %>
 </head>
 <body>
-    <%@include file="header.jsp" %>
-    <h2>
-        Task with ID '<%=request.getParameter("id")%>' not found in To-Do List!
-    </h2>
-    <h3>
-        url: <%=request.getAttribute("url")%>
-    </h3>
+<%@ include file="navigation.jsp" %>
+
+<h2><%= request.getAttribute("message")%>
+</h2>
+<h3>url: <%= request.getAttribute("url")%>
+</h3>
 </body>
 </html>
