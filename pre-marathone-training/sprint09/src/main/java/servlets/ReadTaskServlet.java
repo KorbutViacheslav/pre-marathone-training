@@ -25,13 +25,13 @@ public class ReadTaskServlet extends HttpServlet {
         Task task = taskRepo.read(taskId);
         if (task != null) {
             req.setAttribute("task", task);
-            var requestDispatcher = req.getRequestDispatcher("/WEB-INF/pages/read-task.jsp");
+            var requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/read-task.jsp");
             requestDispatcher.forward(req, resp);
         } else {
             req.setAttribute("message", "Task with ID " + taskId + " not found!");
             req.setAttribute("url", req.getContextPath() + "/read-task?id=" + taskId);
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            var requestDispatcher = req.getRequestDispatcher("WEB-INF/pages/error.jsp");
+            var requestDispatcher = req.getRequestDispatcher("WEB-INF/jsp/error.jsp");
             requestDispatcher.forward(req, resp);
         }
     }

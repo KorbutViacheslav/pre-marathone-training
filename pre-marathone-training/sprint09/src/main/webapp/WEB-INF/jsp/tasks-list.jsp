@@ -5,7 +5,6 @@
 <head>
     <% request.setAttribute("pageTitle", "List of Tasks"); %>
     <%@ include file="head.jsp" %>
-
 </head>
 <body>
 <%@ include file="navigation.jsp" %>

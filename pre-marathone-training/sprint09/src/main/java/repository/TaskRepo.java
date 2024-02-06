@@ -27,9 +27,9 @@ public class TaskRepo {
         return todo.stream().filter(task -> task.getId() == id).findFirst().orElse(null);
     }
 
-    public boolean update(Task newTask) {
-        int index = todo.indexOf(read(newTask.getId()));
-        return todo.set(index, newTask) != null;
+    public boolean update(Task task, int id) {
+        int index = todo.indexOf(read(id));
+        return todo.set(index, task) != null;
     }
 
     public boolean delete(int id) {

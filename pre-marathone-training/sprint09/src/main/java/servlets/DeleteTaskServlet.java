@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import util.JspHelper;
 
 import java.io.IOException;
 
@@ -29,7 +30,7 @@ public class DeleteTaskServlet extends HttpServlet {
             request.setAttribute("message", "Task with ID " + taskId + " not found!");
             request.setAttribute("url", request.getContextPath() + "/delete-task?id=" + taskId);
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/pages/error.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher(JspHelper.getPath("error"));
             requestDispatcher.forward(request, response);
         }
     }
