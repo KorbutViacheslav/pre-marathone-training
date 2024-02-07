@@ -20,7 +20,6 @@ public class TaskRepo {
             listOfTask.add(task);
             return true;
         }
-
         return false;
     }
 
@@ -32,7 +31,6 @@ public class TaskRepo {
         int index = listOfTask.indexOf(read(id));
         return listOfTask.set(index, task) != null;
     }
-
 
     public boolean delete(int id) {
         Task task = read(id);

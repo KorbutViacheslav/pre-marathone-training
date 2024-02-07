@@ -35,7 +35,6 @@ public class CreateTaskServlet extends HttpServlet {
         Task newTask = new Task(title, taskPriority);
 
         boolean created = taskRepository.create(newTask);
-
         if (created) {
             response.sendRedirect(request.getContextPath() + "/tasks-list");
         } else {
