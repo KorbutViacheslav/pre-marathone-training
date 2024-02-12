@@ -82,6 +82,12 @@
 * [Task: Servlets](pre-marathone-training\sprint09\README.md)
 
 </details>
+<details>
+<summary>Sprint 10. Introduction To Spring. IoC.</summary>
+
+* [Task: "ToDo List" Application](pre-marathone-training\sprint10\README.md)
+  
+</details>
 
 * Sprint 1. Class Design. Encapsulation.+++
 * Sprint 2. Inherintance. Polymorphism.+++
@@ -93,7 +99,7 @@
 * Sprint 8. Annotations. ---
 * Sprint 9. Multithreading.+++
 * Sprint 10. JDBC.+++
-* Sprint 11. Servlets.
+* Sprint 11. Servlets.+++
 * Sprint 12. Introduction To Spring. IoC.
 * Sprint 13. ORM. Hibernate with Spring. Part 1.
 * Sprint 14. ORM. Hibernate with Spring. Part 2.
