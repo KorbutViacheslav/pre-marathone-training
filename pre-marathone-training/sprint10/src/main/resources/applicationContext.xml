@@ -7,7 +7,13 @@
     <bean id="classicalMusic"
           class="org.example.training.ClassicalMusic">
     </bean>
+
     <bean id="rockMusic"
           class="org.example.training.RockMusic">
+    </bean>
+
+    <bean id="musicPlayer"
+          class="org.example.training.MusicPlayer">
+        <constructor-arg ref="rockMusic"/>
     </bean>
 </beans>
