@@ -9,7 +9,9 @@
     </bean>
 
     <bean id="rockMusic"
-          class="org.example.training.RockMusic">
+          class="org.example.training.RockMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy">
     </bean>
 
     <bean id="musicPlayer"
