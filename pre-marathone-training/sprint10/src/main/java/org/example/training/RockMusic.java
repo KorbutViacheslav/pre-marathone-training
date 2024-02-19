@@ -15,14 +15,14 @@ public class RockMusic implements Music {
         return "Play ROCK music";
     }
 
-    @Override
     @PostConstruct
+    @Override
     public void doMyInit() {
         System.out.println("Placing a record in the player...");
     }
 
-    @Override
     @PreDestroy
+    @Override
     public void doMyDestroy() {
         System.out.println("The record is put into the player...");
     }

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class MusicPlayer {
     private final Music music;
 
-    public MusicPlayer(@Qualifier("classicalMusic") Music music) {
+    public MusicPlayer(@Qualifier("rockMusic") Music music) {
         this.music = music;
     }
 
