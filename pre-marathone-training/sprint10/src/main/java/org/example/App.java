@@ -1,17 +1,18 @@
 package org.example;
 
 import org.example.training.MusicPlayer;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.example.training.SpringConfig;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * @author Viacheslav Korbut
  */
 public class App {
     public static void main(String[] args) {
-        var context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        var context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
-        var musicPlayerRock = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayerRock.playMusic();
+        var musicPlayer = context.getBean(MusicPlayer.class);
+        musicPlayer.playMusic();
         context.close();
     }
 }

@@ -54,12 +54,13 @@ public class ToDo {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
+/*        if (this == o) return true;
         if (!(o instanceof ToDo toDo)) return false;
         return Objects.equals(title, toDo.title)
                 && Objects.equals(createdAt, toDo.createdAt)
                 && Objects.equals(owner, toDo.owner)
-                && Objects.equals(tasks, toDo.tasks);
+                && Objects.equals(tasks, toDo.tasks);*/
+        return false;
     }
 
     @Override

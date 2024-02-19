@@ -1,9 +1,13 @@
 package org.example.training;
 
-public class MusicPlayer {
-    private Music music;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
-    public MusicPlayer(Music music) {
+@Component
+public class MusicPlayer {
+    private final Music music;
+
+    public MusicPlayer(@Qualifier("classicalMusic") Music music) {
         this.music = music;
     }
 
