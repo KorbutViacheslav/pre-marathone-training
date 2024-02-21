@@ -37,8 +37,10 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public boolean updateTask(Task task) {
-        Task t = taskList.stream().filter(task1 -> task1.getTitle().equals(task.getTitle())).findFirst().orElseThrow(null);
-        if (t==null) {
+        Task t = taskList.stream()
+                .filter(task1 -> task1.getTitle().equals(task.getTitle()))
+                .findFirst().orElseThrow(null);
+        if (t == null) {
             return false;
         }
         int ind = taskList.indexOf(t);
@@ -48,8 +50,10 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public boolean deleteTask(int id) {
-        Task task = taskList.stream().filter(task1 -> task1.getId()==id).findFirst().orElseThrow(null);
-        if(taskCheck(task)){
+        Task task = taskList.stream()
+                .filter(task1 -> task1.getId() == id)
+                .findFirst().orElseThrow(null);
+        if (taskCheck(task)) {
             return taskList.remove(task);
         }
         return false;
@@ -60,6 +64,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     private boolean taskCheck(Task task) {
-        return taskList.stream().anyMatch(t -> t.equals(task));
+        return taskList.stream()
+                .anyMatch(t -> t.equals(task));
     }
 }
