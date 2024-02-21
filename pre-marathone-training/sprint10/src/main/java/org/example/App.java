@@ -1,10 +1,8 @@
 package org.example;
 
-import org.example.training.*;
+import org.example.training.MusicPlayer;
+import org.example.training.SpringConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * @author Viacheslav Korbut
