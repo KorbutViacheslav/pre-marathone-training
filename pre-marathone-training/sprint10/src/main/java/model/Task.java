@@ -3,16 +3,15 @@ package model;
 import java.util.Objects;
 
 public class Task {
-    private int id;
+    private final int id;
     private String title;
     private Priority priority;
-
-    public Task() {
-    }
+    private static int counter = 1;
 
     public Task(String title, Priority priority) {
         this.title = title;
         this.priority = priority;
+        id=counter++;
     }
 
     public int getId() {
@@ -40,12 +39,12 @@ public class Task {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Task task = (Task) o;
-        return id == task.id && Objects.equals(title, task.title) && priority == task.priority;
+        return Objects.equals(title, task.title) && priority == task.priority;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, priority);
+        return Objects.hash(title, priority);
     }
 
     @Override
