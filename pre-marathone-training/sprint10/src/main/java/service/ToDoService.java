@@ -3,11 +3,11 @@ package service;
 import model.ToDo;
 
 public interface ToDoService {
-    boolean addToDo();
+    boolean addToDo(ToDo toDo);
 
-    ToDo readTodo();
+    ToDo readTodo(int idToDo);
 
-    boolean updateToDo();
+    boolean updateToDo(ToDo toDo);
 
     boolean deleteTodo();
 }
