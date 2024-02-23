@@ -3,11 +3,11 @@ package service;
 import model.User;
 
 public interface UserService {
-    boolean addUser();
+    boolean addUser(User user);
 
-    User readUser();
+    User readUser(int idUser);
 
-    boolean updateUser();
+    boolean updateUser(User user);
 
-    boolean deleteUser();
+    boolean deleteUser(int idUSer);
 }
