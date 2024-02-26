@@ -2,6 +2,7 @@ package service.impl;
 
 import model.Priority;
 import model.Task;
+import org.springframework.stereotype.Service;
 import service.TaskService;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.List;
  * Author: Viacheslav Korbut
  * Date: 21.02.2024
  */
+@Service
 public class TaskServiceImpl implements TaskService {
     private final List<Task> taskList;
 
