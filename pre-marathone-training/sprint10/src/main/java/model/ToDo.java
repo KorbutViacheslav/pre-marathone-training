@@ -8,15 +8,15 @@ import java.util.Objects;
 public class ToDo {
     private String title;
 
-    private LocalDateTime createdAt;
+    private final LocalDateTime createdAt;
 
     private User owner;
 
     private List<Task> tasks;
 
-    public ToDo(String title, LocalDateTime createdAt, User owner) {
+    public ToDo(String title, User owner) {
         this.title = title;
-        this.createdAt = createdAt;
+        createdAt = LocalDateTime.now();
         this.owner = owner;
         tasks = new LinkedList<>();
     }
@@ -31,10 +31,6 @@ public class ToDo {
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
     }
 
     public User getOwner() {
