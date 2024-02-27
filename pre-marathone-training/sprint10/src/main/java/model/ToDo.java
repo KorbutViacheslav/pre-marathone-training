@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalDateTime;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -13,11 +14,11 @@ public class ToDo {
 
     private List<Task> tasks;
 
-    public ToDo(String title, LocalDateTime createdAt, User owner, List<Task> tasks) {
+    public ToDo(String title, LocalDateTime createdAt, User owner) {
         this.title = title;
         this.createdAt = createdAt;
         this.owner = owner;
-        this.tasks = tasks;
+        tasks = new LinkedList<>();
     }
 
     public String getTitle() {
@@ -54,13 +55,13 @@ public class ToDo {
 
     @Override
     public boolean equals(Object o) {
-/*        if (this == o) return true;
-        if (!(o instanceof ToDo toDo)) return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ToDo toDo = (ToDo) o;
         return Objects.equals(title, toDo.title)
                 && Objects.equals(createdAt, toDo.createdAt)
                 && Objects.equals(owner, toDo.owner)
-                && Objects.equals(tasks, toDo.tasks);*/
-        return false;
+                && Objects.equals(tasks, toDo.tasks);
     }
 
     @Override

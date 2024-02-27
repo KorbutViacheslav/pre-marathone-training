@@ -3,19 +3,13 @@ package model;
 import java.util.Objects;
 
 public class Task {
-    private final int id;
     private String title;
     private Priority priority;
-    private static int counter = 1;
 
     public Task(String title, Priority priority) {
         this.title = title;
         this.priority = priority;
-        id=counter++;
-    }
 
-    public int getId() {
-        return id;
     }
 
     public String getTitle() {
@@ -50,7 +44,6 @@ public class Task {
     @Override
     public String toString() {
         return "Task{" +
-                "id=" + id +
                 ", title='" + title + '\'' +
                 ", priority=" + priority +
                 '}';
