@@ -14,12 +14,17 @@ import java.util.List;
  */
 @Service
 public class TaskServiceImpl implements TaskService {
+    private final ToDoServiceImpl toDoService;
     private final List<Task> taskList;
 
     {
         taskList = new ArrayList<>();
         taskList.add(new Task("Task #1", Priority.MEDIUM));
         taskList.add(new Task("Task #2", Priority.LOW));
+    }
+
+    public TaskServiceImpl(ToDoServiceImpl toDoService) {
+        this.toDoService = toDoService;
     }
 
     @Override
@@ -31,9 +36,9 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Task readTsk(int id) {
+    public Task readTsk(String title) {
         return taskList.stream()
-                .filter(task -> task.getId() == id)
+                .filter(task -> task.getTitle().equals(title))
                 .findFirst().orElseThrow(null);
     }
 
@@ -51,9 +56,9 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public boolean deleteTask(int id) {
+    public boolean deleteTask(String title) {
         Task task = taskList.stream()
-                .filter(task1 -> task1.getId() == id)
+                .filter(task1 -> task1.getTitle().equals(title))
                 .findFirst().orElseThrow(null);
         if (taskCheck(task)) {
             return taskList.remove(task);

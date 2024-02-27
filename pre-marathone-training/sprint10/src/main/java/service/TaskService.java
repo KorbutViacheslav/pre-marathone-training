@@ -7,10 +7,10 @@ import java.util.List;
 public interface TaskService {
     boolean createTask(Task task);
 
-    Task readTsk(int id);
+    Task readTsk(String title);
 
     boolean updateTask(Task task);
 
-    boolean deleteTask(int id);
+    boolean deleteTask(String title);
     List<Task> getTaskList();
 }

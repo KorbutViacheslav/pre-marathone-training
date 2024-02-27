@@ -2,13 +2,10 @@ package org.example;
 
 import model.Priority;
 import model.Task;
-import org.example.training.MusicPlayer;
-import org.example.training.SpringConfig;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import service.TaskService;
 import service.impl.TaskServiceImpl;
-
-import java.util.List;
+import service.impl.ToDoServiceImpl;
+import service.impl.UserServiceImpl;
 
 /**
  * @author Viacheslav Korbut
@@ -19,14 +16,14 @@ public class App {
         var musicPlayer = context.getBean(MusicPlayer.class);
         musicPlayer.playMusic();
         context.close();*/
-        TaskService taskService = new TaskServiceImpl();
+        TaskService taskService = new TaskServiceImpl(new ToDoServiceImpl(new UserServiceImpl()));
         System.out.println(taskService.createTask(new Task("Task #1", Priority.MEDIUM)));
         System.out.println(taskService.createTask(new Task("Task #3", Priority.MEDIUM)));
         System.out.println(taskService.getTaskList());
-        System.out.println("Delete: "+taskService.deleteTask(1));
+        System.out.println("Delete: "+taskService.deleteTask("Task #1"));
         Task ta = new Task("Task #3",Priority.HIGH);
         System.out.println("Update: "+taskService.updateTask(ta));
-        System.out.println("Read: " + taskService.readTsk(5));
+        System.out.println("Read: " + taskService.readTsk("Task #2"));
 
     }
 }

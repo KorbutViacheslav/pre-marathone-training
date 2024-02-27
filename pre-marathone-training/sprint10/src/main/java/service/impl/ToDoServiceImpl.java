@@ -1,6 +1,7 @@
 package service.impl;
 
 import model.ToDo;
+import model.User;
 import org.springframework.stereotype.Service;
 import service.ToDoService;
 
@@ -10,13 +11,20 @@ import service.ToDoService;
  */
 @Service
 public class ToDoServiceImpl implements ToDoService {
-    @Override
-    public boolean addToDo(ToDo toDo) {
-        return false;
+    private final UserServiceImpl userService;
+
+    public ToDoServiceImpl(UserServiceImpl userService) {
+        this.userService = userService;
     }
 
     @Override
-    public ToDo readTodo(int idToDo) {
+    public boolean addToDo(ToDo toDo, User user) {
+        toDo.setOwner(user);
+        return user.getMyTodos().add(toDo);
+    }
+
+    @Override
+    public ToDo readTodo(String title) {
         return null;
     }
 
@@ -26,7 +34,7 @@ public class ToDoServiceImpl implements ToDoService {
     }
 
     @Override
-    public boolean deleteTodo() {
+    public boolean deleteTodo(String title) {
         return false;
     }
 }

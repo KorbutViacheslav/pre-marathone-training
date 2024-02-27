@@ -1,13 +1,14 @@
 package service;
 
 import model.ToDo;
+import model.User;
 
 public interface ToDoService {
-    boolean addToDo(ToDo toDo);
+    boolean addToDo(ToDo toDo, User user);
 
-    ToDo readTodo(int idToDo);
+    ToDo readTodo(String title);
 
     boolean updateToDo(ToDo toDo);
 
-    boolean deleteTodo();
+    boolean deleteTodo(String title);
 }

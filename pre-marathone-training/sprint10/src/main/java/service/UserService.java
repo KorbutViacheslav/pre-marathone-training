@@ -5,9 +5,9 @@ import model.User;
 public interface UserService {
     boolean addUser(User user);
 
-    User readUser(int idUser);
+    User readUser(String firstName, String lastName);
 
     boolean updateUser(User user);
 
-    boolean deleteUser(int idUSer);
+    boolean deleteUser(User user);
 }

@@ -6,6 +6,8 @@ import service.UserService;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 /**
  * Author: Viacheslav Korbut
@@ -21,22 +23,45 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean addUser(User user) {
+        if (checkUser(user).isPresent()) {
+            return false;
+        }
         return userList.add(user);
     }
 
     @Override
-    public User readUser(int idUser) {
-        return userList.get(idUser);
+    public User readUser(String firstName, String lastName) {
+        return userList.stream()
+                .filter(u -> u.getFirstName().equals(firstName) && u.getLastName().equals(lastName))
+                .findFirst()
+                .orElse(null);
     }
 
     @Override
     public boolean updateUser(User user) {
+        var optionalUser = checkUser(user);
+        if (optionalUser.isPresent()) {
+            var userToUpdate = optionalUser.get();
+            userToUpdate.setFirstName(user.getFirstName());
+            userToUpdate.setLastName(user.getLastName());
+            userToUpdate.setPassword(user.getPassword());
+            userToUpdate.setMyTodos(user.getMyTodos());
+            return true;
+        }
         return false;
     }
 
     @Override
-    public boolean deleteUser(int idUSer) {
-        User user = readUser(idUSer);
-        return userList.remove(user);
+    public boolean deleteUser(User user) {
+        if (checkUser(user).isPresent()) {
+            userList.remove(user);
+        }
+        return false;
+    }
+
+    private Optional<User> checkUser(User user) {
+        return userList.stream()
+                .filter(u -> u.getEmail().equals(user.getEmail()))
+                .findFirst();
     }
 }
