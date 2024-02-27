@@ -2,6 +2,8 @@ package service;
 
 import model.User;
 
+import java.util.List;
+
 public interface UserService {
     boolean addUser(User user);
 
@@ -10,4 +12,6 @@ public interface UserService {
     boolean updateUser(User user);
 
     boolean deleteUser(User user);
+
+    List<User> getAllUsers();
 }

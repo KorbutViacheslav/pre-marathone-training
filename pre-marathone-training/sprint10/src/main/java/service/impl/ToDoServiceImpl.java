@@ -19,6 +19,7 @@ public class ToDoServiceImpl implements ToDoService {
 
     @Override
     public boolean addToDo(ToDo toDo, User user) {
+        userService.readUser(user.getFirstName(),user.getLastName());
         toDo.setOwner(user);
         return user.getMyTodos().add(toDo);
     }

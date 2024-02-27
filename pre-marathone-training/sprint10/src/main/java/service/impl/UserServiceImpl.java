@@ -59,6 +59,11 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
+    @Override
+    public List<User> getAllUsers() {
+        return userList;
+    }
+
     private Optional<User> checkUser(User user) {
         return userList.stream()
                 .filter(u -> u.getEmail().equals(user.getEmail()))
