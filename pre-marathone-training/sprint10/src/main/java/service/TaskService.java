@@ -1,11 +1,12 @@
 package service;
 
 import model.Task;
+import model.ToDo;
 
 import java.util.List;
 
 public interface TaskService {
-    boolean createTask(Task task);
+    boolean createTask(Task task, ToDo toDo);
 
     Task readTsk(String title);
 

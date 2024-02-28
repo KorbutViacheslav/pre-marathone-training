@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import service.ToDoService;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Author: Viacheslav Korbut
@@ -68,5 +69,12 @@ public class ToDoServiceImpl implements ToDoService {
                     toDo.getOwner().getMyTodos().remove(toDo);
                     return true;
                 }).orElse(false);
+    }
+
+    @Override
+    public List<ToDo> getAllToDo() {
+        return userService.getAllUsers().stream()
+                .flatMap(user -> user.getMyTodos().stream())
+                .collect(Collectors.toList());
     }
 }
