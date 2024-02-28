@@ -4,7 +4,7 @@ import model.ToDo;
 import model.User;
 
 public interface ToDoService {
-    boolean addToDo(ToDo toDo, User user);
+    boolean addToDo(ToDo toDo);
 
     ToDo readTodo(String title);
 
