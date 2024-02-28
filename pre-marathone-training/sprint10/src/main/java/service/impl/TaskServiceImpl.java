@@ -1,12 +1,10 @@
 package service.impl;
 
-import model.Priority;
 import model.Task;
 import model.ToDo;
 import org.springframework.stereotype.Service;
 import service.TaskService;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,28 +31,47 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public Task readTsk(String title) {
-        return null;
+        return getTaskList()
+                .stream()
+                .filter(t -> t.getTitle().equals(title))
+                .findFirst()
+                .orElse(null);
     }
 
     @Override
     public boolean updateTask(Task task) {
-
+        var t = readTsk(task.getTitle());
+        if (t == null) {
+            return false;
+        }
+        t.setPriority(task.getPriority());
         return true;
     }
 
     @Override
     public boolean deleteTask(String title) {
-
-        return false;
+        if (!taskCheck(title)) {
+            return false;
+        }
+        return getTaskList().remove(readTsk(title));
     }
 
     public List<Task> getTaskList() {
-        return toDoService.getAllToDo().stream()
+        return toDoService.getAllToDo()
+                .stream()
                 .flatMap(toDo -> toDo.getTasks().stream())
                 .collect(Collectors.toList());
     }
 
     private boolean taskCheck(Task task) {
-        return getTaskList().stream().anyMatch(t -> t.getTitle().equals(task.getTitle()));
+        return getTaskList()
+                .stream()
+                .anyMatch(t -> t.getTitle().equals(task.getTitle()));
+    }
+
+    private boolean taskCheck(String task) {
+        return getTaskList()
+                .stream()
+                .anyMatch(t -> t.getTitle().equals(task));
     }
 }
