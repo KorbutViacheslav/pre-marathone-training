@@ -6,6 +6,9 @@ import model.Task;
 import model.ToDo;
 import model.User;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import service.TaskService;
+import service.ToDoService;
+import service.UserService;
 import service.impl.TaskServiceImpl;
 import service.impl.ToDoServiceImpl;
 import service.impl.UserServiceImpl;
@@ -15,13 +18,13 @@ import service.impl.UserServiceImpl;
  * Date: 21.02.2024
  */
 public class AppStart {
-
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(ApplicationSpringConfig.class);
 
-        var userService = new UserServiceImpl();
-        var toDoService = new ToDoServiceImpl(userService);
-        var taskService = new TaskServiceImpl(toDoService);
+        var userService = context.getBean(UserService.class);
+        var toDoService = context.getBean(ToDoService.class);
+        var taskService = context.getBean(TaskService.class);
+
         User mark = new User("Mark","Twen","tewn@gmail","12345");
         User george = new User("Gerge","Martin","martin@gmail","54321");
         User tom = new User("Tom","Jerry","jerry@gmail","11111");

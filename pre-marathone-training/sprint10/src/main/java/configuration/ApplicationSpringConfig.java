@@ -8,6 +8,6 @@ import org.springframework.context.annotation.Configuration;
  * Date: 21.02.2024
  */
 @Configuration
-@ComponentScan("model")
+@ComponentScan("service")
 public class ApplicationSpringConfig {
 }
