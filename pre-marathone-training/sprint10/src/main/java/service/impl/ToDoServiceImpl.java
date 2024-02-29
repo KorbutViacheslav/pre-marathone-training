@@ -31,16 +31,10 @@ public class ToDoServiceImpl implements ToDoService {
 
     @Override
     public ToDo readTodo(String title) {
-        List<User> userList = userService.getAllUsers();
-        for (User user : userList) {
-            List<ToDo> toDoList = user.getMyTodos();
-            for (ToDo todo : toDoList) {
-                if (todo.getTitle().equals(title)) {
-                    return todo;
-                }
-            }
-        }
-        return null;
+        return userService.getAllUsers().stream()
+                .flatMap(user -> user.getMyTodos().stream())
+                .filter(toDo -> toDo.getTitle().equals(title))
+                .findFirst().orElse(null);
     }
 
     @Override

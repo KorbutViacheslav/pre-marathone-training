@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
  */
 @Service
 public class TaskServiceImpl implements TaskService {
-    private ToDoServiceImpl toDoService;
+    private final ToDoServiceImpl toDoService;
 
     public TaskServiceImpl(ToDoServiceImpl toDoService) {
         this.toDoService = toDoService;
