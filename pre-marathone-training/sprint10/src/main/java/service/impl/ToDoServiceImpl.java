@@ -31,16 +31,16 @@ public class ToDoServiceImpl implements ToDoService {
 
     @Override
     public ToDo readTodo(String title) {
-        return userService.getAllUsers().stream()
-                .flatMap(user -> user.getMyTodos().stream())
+        return getAllToDo()
+                .stream()
                 .filter(toDo -> toDo.getTitle().equals(title))
                 .findFirst().orElse(null);
     }
 
     @Override
     public boolean updateToDo(ToDo toDo) {
-        return userService.getAllUsers().stream()
-                .flatMap(user -> user.getMyTodos().stream())
+        return getAllToDo()
+                .stream()
                 .filter(toDo1 -> toDo1.equals(toDo))
                 .findFirst()
                 .map(toDo1 -> {
@@ -54,9 +54,8 @@ public class ToDoServiceImpl implements ToDoService {
 
     @Override
     public boolean deleteTodo(String title) {
-        return userService.getAllUsers().stream()
-                .map(User::getMyTodos)
-                .flatMap(List::stream)
+        return getAllToDo()
+                .stream()
                 .filter(toDo -> toDo.getTitle().equals(title))
                 .findFirst()
                 .map(toDo -> {

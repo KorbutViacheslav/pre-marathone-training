@@ -45,6 +45,9 @@ public class AppStart {
         taskService.createTask(new Task("Task4",Priority.HIGH),toDo4);
 
         userService.getAllUsers().forEach(System.out::println);
+        System.out.println("AFTER");
+        toDoService.deleteTodo("2 to do");
+        userService.getAllUsers().forEach(System.out::println);
 
         context.close();
     }
