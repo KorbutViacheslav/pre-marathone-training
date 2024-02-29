@@ -70,7 +70,7 @@ public class ToDo {
         return "ToDo{" +
                 "title='" + title + '\'' +
                 ", createdAt=" + createdAt +
-                ", owner=" + owner +
+                ", owner=" + owner.getFirstName() +
                 ", tasks=" + tasks +
                 '}';
     }

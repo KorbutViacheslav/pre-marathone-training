@@ -87,7 +87,7 @@ public class User {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", myTodos=" + myTodos +
+                ", \nmyTodos=" + myTodos +
                 '}';
     }
 }
