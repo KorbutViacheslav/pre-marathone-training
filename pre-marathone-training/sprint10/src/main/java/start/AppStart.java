@@ -25,27 +25,27 @@ public class AppStart {
         var toDoService = context.getBean(ToDoService.class);
         var taskService = context.getBean(TaskService.class);
 
-        User mark = new User("Mark","Twen","tewn@gmail","12345");
-        User george = new User("Gerge","Martin","martin@gmail","54321");
-        User tom = new User("Tom","Jerry","jerry@gmail","11111");
+        var mark = new User("Mark", "Twen", "tewn@gmail", "12345");
+        var george = new User("George", "Martin", "martin@gmail", "54321");
+        var tom = new User("Tom", "Jerry", "jerry@gmail", "11111");
 
         userService.addUser(mark);
         userService.addUser(george);
         userService.addUser(tom);
 
-        ToDo toDo1 = new ToDo("1 to do",mark);
-        ToDo toDo2 = new ToDo("2 to do",mark);
-        ToDo toDo3 = new ToDo("3 to do",george);
-        ToDo toDo4 = new ToDo("4 to do",tom);
+        var toDo1 = new ToDo("1 to do", mark);
+        var toDo2 = new ToDo("2 to do", mark);
+        var toDo3 = new ToDo("3 to do", george);
+        var toDo4 = new ToDo("4 to do", tom);
         toDoService.addToDo(toDo3);
         toDoService.addToDo(toDo1);
         toDoService.addToDo(toDo2);
         toDoService.addToDo(toDo4);
 
-        taskService.createTask(new Task("Task1",Priority.HIGH),toDo1);
-        taskService.createTask(new Task("Task2",Priority.HIGH),toDo2);
-        taskService.createTask(new Task("Task3",Priority.HIGH),toDo3);
-        taskService.createTask(new Task("Task4",Priority.HIGH),toDo4);
+        taskService.createTask(new Task("Task1", Priority.HIGH), toDo1);
+        taskService.createTask(new Task("Task2", Priority.HIGH), toDo2);
+        taskService.createTask(new Task("Task3", Priority.HIGH), toDo3);
+        taskService.createTask(new Task("Task4", Priority.HIGH), toDo4);
 
         userService.getAllUsers().forEach(System.out::println);
         System.out.println("AFTER");
