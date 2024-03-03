@@ -1,10 +1,7 @@
-> ### Record a short video (5 - 10 minutes) where demonstrate the functionality your Spring Application and publish it in your [<u>YouTube</u>](https://www.youtube.com) channel.
+# Sprint 10
 
-***
 
-# Java Online Marathon. Sprint 10.
-
-## ToDo List Application
+### ToDo List Application
 Please, create Service Layer of ‘ToDo List’ Application should be able to:
 
 1. Add new user to the Application.
@@ -40,3 +37,7 @@ Save a list of all users as a field in the UserService class.
 > 2. Реалізуйте всі необхідні геттери та сетери для класів рівня моделі.
 > 3. Ви повинні запустити тести, щоб продемонструвати виконання коду рівня обслуговування.
 > 4. Збережіть список усіх користувачів як поле в класі UserService.
+
+> ### Record a short video (5 - 10 minutes) where demonstrate the functionality your Spring Application and publish it in your [<u>YouTube</u>](https://www.youtube.com) channel.
+
+***
