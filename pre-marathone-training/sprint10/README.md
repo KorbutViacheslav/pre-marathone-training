@@ -1,10 +1,8 @@
 # Sprint 10: Introduction To Spring. IoC.
-
-
 ### ToDo List Application
 Please, create Service Layer of ‘ToDo List’ Application should be able to:
 
-1. Add new user to the Application.
+1. Add new **User** to the Application.
 2. Update/Delete/Gets existing users.
 3. Add new **To-Do List** to an existing user.
 4. Update/Delete/Gets existing 'To-Do Lists'.
