@@ -2,10 +2,9 @@
 
 ***
 
-# Java Online Marathon
+# Java Online Marathon. Sprint 10.
 
-## ‘ToDo List’ Application
-
+## ToDo List Application
 Please, create Service Layer of ‘ToDo List’ Application should be able to:
 
 1. Add new user to the Application.
