@@ -37,5 +37,3 @@ Save a list of all users as a field in the UserService class.
 > 4. Збережіть список усіх користувачів як поле в класі UserService.
 
 > ### Record a short video (5 - 10 minutes) where demonstrate the functionality your Spring Application and publish it in your [<u>YouTube</u>](https://www.youtube.com) channel.
-
-***
