@@ -88,6 +88,12 @@
 * [Task: "ToDo List" Application](pre-marathone-training\sprint10\README.md)
   
 </details>
+<details>
+<summary>Sprint 11. ORM. Hibernate with Spring. Part 1</summary>
+
+* [Task: ](pre-marathone-training\sprint11\README.md)
+  
+</details>
 
 * Sprint 1. Class Design. Encapsulation.+++
 * Sprint 2. Inherintance. Polymorphism.+++
@@ -100,7 +106,7 @@
 * Sprint 9. Multithreading.+++
 * Sprint 10. JDBC.+++
 * Sprint 11. Servlets.+++
-* Sprint 12. Introduction To Spring. IoC.
+* Sprint 12. Introduction To Spring. IoC.+++
 * Sprint 13. ORM. Hibernate with Spring. Part 1.
 * Sprint 14. ORM. Hibernate with Spring. Part 2.
 * Sprint 15. Spring MVC.
