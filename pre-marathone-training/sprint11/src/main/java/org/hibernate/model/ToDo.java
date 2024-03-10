@@ -3,6 +3,7 @@ package org.hibernate.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -21,12 +22,12 @@ public class ToDo {
     @NotEmpty
     private String title;
 
-    @NotEmpty
+    @CreationTimestamp
     private LocalDateTime createdAt;
 
     @ManyToOne
     private User owner;
 
-    @OneToMany
+    @OneToMany()
     private List<Task> taskList;
 }

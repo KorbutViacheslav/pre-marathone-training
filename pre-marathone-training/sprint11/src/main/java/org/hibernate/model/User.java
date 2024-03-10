@@ -21,6 +21,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id")
     private int id;
 
     @NotEmpty
@@ -30,15 +31,15 @@ public class User {
     private String lastName;
 
     @Email
-    @NotEmpty
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @NotEmpty
+    @Column(name = "password", nullable = false, unique = true)
     private String password;
 
     @ManyToOne
     private Role role;
 
-    @OneToMany
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.REMOVE)
     private List<ToDo> toDoList;
 }

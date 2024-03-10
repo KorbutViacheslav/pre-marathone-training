@@ -1,9 +1,8 @@
 package org.hibernate.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 /**
@@ -17,7 +16,17 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @Column(nullable = false, unique = true)
+    @Size(min = 2, max = 300)
     private String name;
 
+    @Enumerated(EnumType.STRING)
+    @NotEmpty
     private Priority priority;
+
+    @ManyToOne
+    private ToDo toDo;
+
+    @ManyToOne
+    private State state;
 }
