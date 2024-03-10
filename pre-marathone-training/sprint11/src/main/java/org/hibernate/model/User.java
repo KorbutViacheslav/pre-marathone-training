@@ -9,6 +9,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.UniqueElements;
 
+import java.util.List;
+
 /**
  * Author: Viacheslav Korbut
  * Date: 06.03.2024
@@ -33,4 +35,10 @@ public class User {
 
     @NotEmpty
     private String password;
+
+    @ManyToOne
+    private Role role;
+
+    @OneToMany
+    private List<ToDo> toDoList;
 }

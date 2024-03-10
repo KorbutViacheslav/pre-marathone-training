@@ -1,12 +1,11 @@
 package org.hibernate.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * Author: Viacheslav Korbut
@@ -19,7 +18,15 @@ public class ToDo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @NotEmpty
     private String title;
 
+    @NotEmpty
     private LocalDateTime createdAt;
+
+    @ManyToOne
+    private User owner;
+
+    @OneToMany
+    private List<Task> taskList;
 }
