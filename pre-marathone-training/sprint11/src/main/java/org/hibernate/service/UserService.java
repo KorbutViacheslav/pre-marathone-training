@@ -12,9 +12,9 @@ public interface UserService {
 
     User createUser(User user);
 
-    User readUser(int id);
+    User readUser(Integer id);
 
-    User updateUser(int id);
+    boolean updateUser(User user);
 
     boolean deleteUser(User user);
 

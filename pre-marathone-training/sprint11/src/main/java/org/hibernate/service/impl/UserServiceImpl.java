@@ -1,6 +1,8 @@
 package org.hibernate.service.impl;
 
+import jakarta.persistence.EntityExistsException;
 import org.hibernate.model.User;
+import org.hibernate.repository.UserRepository;
 import org.hibernate.service.UserService;
 import org.springframework.stereotype.Service;
 
@@ -12,28 +14,47 @@ import java.util.List;
  */
 @Service
 public class UserServiceImpl implements UserService {
+    UserRepository userRepository;
+
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     @Override
     public User createUser(User user) {
-        return null;
+        return userRepository.save(user);
     }
 
     @Override
-    public User readUser(int id) {
-        return null;
+    public User readUser(Integer id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new EntityExistsException("This User doesn't exists in database!"));
     }
 
     @Override
-    public User updateUser(int id) {
-        return null;
+    public boolean updateUser(User user) {
+        var u = userRepository.findById(user.getId());
+        if (u.isPresent()) {
+            userRepository.save(user);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
     public boolean deleteUser(User user) {
-        return false;
+        var u = userRepository.findById(user.getId());
+        if (u.isPresent()) {
+            userRepository.delete(user);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
     public List<User> getAllUsers() {
-        return null;
+        return userRepository.findAll();
     }
 }
