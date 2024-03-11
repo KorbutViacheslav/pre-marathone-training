@@ -1,9 +1,11 @@
 package org.hibernate.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -11,15 +13,17 @@ import java.util.List;
  * Date: 06.03.2024
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Role {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name",nullable = false, unique = true)
+    @Column(nullable = false, unique = true)
     private String name;
 
     @OneToMany(mappedBy = "role")
-    private List<User> userList;
+    private List<User> userList = new LinkedList<>();
 }

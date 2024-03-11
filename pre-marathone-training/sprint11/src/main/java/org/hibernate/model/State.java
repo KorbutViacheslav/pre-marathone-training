@@ -1,8 +1,11 @@
 package org.hibernate.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -10,15 +13,17 @@ import java.util.List;
  * Date: 06.03.2024
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class State {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(nullable = false, unique = true)
     private String name;
 
     @OneToMany(mappedBy = "state")
-    private List<Task> taskList;
+    private List<Task> taskList = new LinkedList<>();
 }

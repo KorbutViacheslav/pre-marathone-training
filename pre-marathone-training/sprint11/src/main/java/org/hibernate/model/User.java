@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.UniqueElements;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -16,18 +17,19 @@ import java.util.List;
  * Date: 06.03.2024
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "user_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotEmpty
+    @Column(nullable = false)
     private String firstName;
 
-    @NotEmpty
+    @Column(nullable = false)
     private String lastName;
 
     @Email
@@ -40,6 +42,6 @@ public class User {
     @ManyToOne
     private Role role;
 
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.REMOVE)
-    private List<ToDo> toDoList;
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    private List<ToDo> toDoList = new LinkedList<>();
 }
