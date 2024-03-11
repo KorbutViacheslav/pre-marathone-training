@@ -8,8 +8,10 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Author: Viacheslav Korbut
@@ -25,7 +27,7 @@ public class ToDo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(nullable = false,unique = true)
+    @Column(nullable = false, unique = true)
     private String title;
 
     @CreationTimestamp
@@ -35,6 +37,13 @@ public class ToDo {
     @JoinColumn(name = "owner_id")
     private User owner;
 
-    @OneToMany(mappedBy = "todos",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "toDo", cascade = CascadeType.ALL)
     private List<Task> taskList = new LinkedList<>();
+
+    @ManyToMany
+    @JoinTable(name = "todo_collaborator",
+            joinColumns = @JoinColumn(name = "todo_id"),
+            inverseJoinColumns = @JoinColumn(name = "collaborators_id")
+    )
+    private Set<User> collaborators = new HashSet<>();
 }

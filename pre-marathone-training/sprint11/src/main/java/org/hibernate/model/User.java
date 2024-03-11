@@ -9,8 +9,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.UniqueElements;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Author: Viacheslav Korbut
@@ -45,4 +47,10 @@ public class User {
 
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     private List<ToDo> toDoList = new LinkedList<>();
+
+    @ManyToMany
+    @JoinTable(name = "todo_collaborator",
+            joinColumns = @JoinColumn(name = "collaborators_id"),
+            inverseJoinColumns = @JoinColumn(name = "todo_id"))
+    private Set<ToDo> toDoSet = new HashSet<>();
 }
