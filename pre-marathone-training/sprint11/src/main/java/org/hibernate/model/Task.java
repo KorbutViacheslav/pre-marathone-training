@@ -21,7 +21,6 @@ public class Task {
     private String name;
 
     @Enumerated(EnumType.STRING)
-    @NotEmpty
     private Priority priority;
 
     @ManyToOne
