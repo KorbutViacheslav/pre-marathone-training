@@ -27,9 +27,9 @@ public class Task {
     @Enumerated(EnumType.STRING)
     private Priority priority;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private ToDo toDo;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private State state;
 }

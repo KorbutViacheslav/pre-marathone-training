@@ -39,7 +39,7 @@ public class User {
     @Column(name = "password", nullable = false, unique = true)
     private String password;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Role role;
 
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
