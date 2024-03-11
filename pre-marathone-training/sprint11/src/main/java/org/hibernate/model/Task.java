@@ -28,8 +28,10 @@ public class Task {
     private Priority priority;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "todo_id")
     private ToDo toDo;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "state_id")
     private State state;
 }

@@ -24,6 +24,6 @@ public class State {
     @Column(nullable = false, unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "state")
+    @OneToMany(mappedBy = "state",cascade = CascadeType.ALL)
     private List<Task> taskList = new LinkedList<>();
 }

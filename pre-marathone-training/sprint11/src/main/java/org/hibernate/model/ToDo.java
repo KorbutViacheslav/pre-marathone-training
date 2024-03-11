@@ -32,6 +32,7 @@ public class ToDo {
     private LocalDateTime createdAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "owner_id")
     private User owner;
 
     @OneToMany(mappedBy = "todos",cascade = CascadeType.ALL)

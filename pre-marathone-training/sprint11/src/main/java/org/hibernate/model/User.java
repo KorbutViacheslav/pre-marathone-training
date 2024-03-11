@@ -40,6 +40,7 @@ public class User {
     private String password;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_id")
     private Role role;
 
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
