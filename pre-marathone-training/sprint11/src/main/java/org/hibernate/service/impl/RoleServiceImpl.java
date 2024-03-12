@@ -1,6 +1,8 @@
 package org.hibernate.service.impl;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.hibernate.model.Role;
+import org.hibernate.repository.RoleRepository;
 import org.hibernate.service.RoleService;
 import org.springframework.stereotype.Service;
 
@@ -12,28 +14,44 @@ import java.util.List;
  */
 @Service
 public class RoleServiceImpl implements RoleService {
-    @Override
-    public Role createRole(Role role) {
-        return null;
+    RoleRepository rR;
+
+    public RoleServiceImpl(RoleRepository rR) {
+        this.rR = rR;
     }
 
     @Override
-    public Role readRole(int id) {
-        return null;
+    public Role createRole(Role role) {
+        return rR.save(role);
+    }
+
+    @Override
+    public Role readRole(Integer id) {
+        return rR.findById(id).orElseThrow(() -> new EntityNotFoundException("Role doesn`t find!"));
     }
 
     @Override
     public Role updateRole(Role role) {
-        return null;
+        return rR.findById(role.getId()).map(r -> {
+            r.setName(role.getName());
+            r.setUserList(role.getUserList());
+            return rR.save(r);
+        }).orElseThrow(() -> new EntityNotFoundException("Role doesn`t update!"));
     }
 
     @Override
-    public boolean deleteRole(int id) {
-        return false;
+    public boolean deleteRole(Integer id) {
+        var r = rR.findById(id);
+        if (r.isPresent()) {
+            rR.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
     public List<Role> getAllRole() {
-        return null;
+        return rR.findAll();
     }
 }

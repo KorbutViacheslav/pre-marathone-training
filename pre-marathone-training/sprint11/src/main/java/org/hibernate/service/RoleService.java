@@ -12,11 +12,11 @@ public interface RoleService {
 
     Role createRole(Role role);
 
-    Role readRole(int id);
+    Role readRole(Integer id);
 
     Role updateRole(Role role);
 
-    boolean deleteRole(int id);
+    boolean deleteRole(Integer id);
 
     List<Role> getAllRole();
 }
