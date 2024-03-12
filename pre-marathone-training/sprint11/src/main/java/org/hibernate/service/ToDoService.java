@@ -12,11 +12,11 @@ public interface ToDoService {
 
     ToDo createToDo(ToDo toDo);
 
-    ToDo readToDo(int id);
+    ToDo readToDo(Integer id);
 
     ToDo updateToDo(ToDo toDo);
 
-    boolean deleteToDo(int id);
+    boolean deleteToDo(Integer id);
 
     List<ToDo> getAllToDo();
 }
