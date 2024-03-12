@@ -12,11 +12,11 @@ public interface StateService {
 
     State createState(State state);
 
-    State readState(int id);
+    State readState(Integer id);
 
     State updateState(State state);
 
-    boolean deleteState(int id);
+    boolean deleteState(Integer id);
 
     List<State> getAllState();
 }
