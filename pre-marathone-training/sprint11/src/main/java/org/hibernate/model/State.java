@@ -2,9 +2,8 @@ package org.hibernate.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -28,4 +27,12 @@ public class State {
 
     @OneToMany(mappedBy = "state", cascade = CascadeType.ALL)
     private List<Task> taskList = new LinkedList<>();
+
+    @Override
+    public String toString() {
+        return "State{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
