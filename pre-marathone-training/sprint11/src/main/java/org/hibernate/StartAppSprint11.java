@@ -8,8 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class StartAppSprint11 implements CommandLineRunner {
-    @Autowired
     StateService service;
+
+    public StartAppSprint11(StateService service) {
+        this.service = service;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(StartAppSprint11.class, args);
