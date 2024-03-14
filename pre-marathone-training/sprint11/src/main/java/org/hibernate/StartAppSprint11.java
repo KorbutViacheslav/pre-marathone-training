@@ -1,7 +1,6 @@
 package org.hibernate;
 
 import org.hibernate.service.StateService;
-import org.hibernate.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,7 +18,6 @@ public class StartAppSprint11 implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("Running Spring Boot Application");
-
         System.out.println(service.readState(5));
     }
 }
