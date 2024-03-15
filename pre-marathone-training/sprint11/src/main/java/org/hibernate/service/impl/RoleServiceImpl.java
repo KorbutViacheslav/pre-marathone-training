@@ -27,7 +27,7 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public Role readRole(Integer id) {
-        return rR.findById(id).orElseThrow(() -> new EntityNotFoundException("Role doesn`t find!"));
+        return rR.findById(id).orElseThrow(() -> new EntityNotFoundException("Role not found!"));
     }
 
     @Override
@@ -36,7 +36,7 @@ public class RoleServiceImpl implements RoleService {
             r.setName(role.getName());
             r.setUserList(role.getUserList());
             return rR.save(r);
-        }).orElseThrow(() -> new EntityNotFoundException("Role doesn`t update!"));
+        }).orElseThrow(() -> new EntityNotFoundException("Role not update!"));
     }
 
     @Override
