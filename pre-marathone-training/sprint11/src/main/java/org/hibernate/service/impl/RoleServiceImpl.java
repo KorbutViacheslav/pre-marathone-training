@@ -27,7 +27,8 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public Role readRole(Integer id) {
-        return rR.findById(id).orElseThrow(() -> new EntityNotFoundException("Role not found!"));
+        return rR.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Role not found!"));
     }
 
     @Override
