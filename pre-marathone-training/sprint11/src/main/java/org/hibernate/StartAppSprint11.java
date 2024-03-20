@@ -21,8 +21,6 @@ public class StartAppSprint11 implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("Running Spring Boot Application");
-
-
         System.out.println(service.readState(5));
     }
 }
